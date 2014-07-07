@@ -1,7 +1,5 @@
 #include <gtk/gtk.h>
-#include <math.h>
 #include <jalali/jalali.h>
-#include <jalali/jtime.h>
 
 /* function to clear label text */
 void clearcal(GtkBuilder *builder)
