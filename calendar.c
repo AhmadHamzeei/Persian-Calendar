@@ -28,18 +28,14 @@ gchar *persian_digit(gint num)
 {
   gchar *number = "";
   const gchar *dig[10] = {"۰", "۱", "۲", "۳", "۴", "۵", "۶", "۷", "۸", "۹"};
-  gint i = num, n = 1, t;
-
-  while(i /= 10)
-    n++;
-
-  while(n--)
+  gint i;
+  
+  do
   {
-    t = num / pow(10, n);
-    num -= t * pow(10, n);
-    number = g_strconcat(number, dig[t], NULL);
-  }
-
+    i = num % 10;
+    number = g_strconcat(dig[i], number, NULL);
+  } while (num /= 10);
+  
   return number;
 }
 
