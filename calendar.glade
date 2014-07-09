@@ -16,7 +16,7 @@
         <property name="orientation">vertical</property>
         <property name="homogeneous">True</property>
         <child>
-          <object class="GtkBox" id="box8">
+          <object class="GtkBox" id="up_box">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="spacing">5</property>
@@ -84,13 +84,13 @@
           </packing>
         </child>
         <child>
-          <object class="GtkBox" id="box1">
+          <object class="GtkBox" id="day_box">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="spacing">5</property>
             <property name="homogeneous">True</property>
             <child>
-              <object class="GtkLabel" id="label42">
+              <object class="GtkLabel" id="Jo">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="label" translatable="yes">جمعه</property>
@@ -102,7 +102,7 @@
               </packing>
             </child>
             <child>
-              <object class="GtkLabel" id="label43">
+              <object class="GtkLabel" id="Pa">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="label" translatable="yes">پنج‌شنبه</property>
@@ -114,7 +114,7 @@
               </packing>
             </child>
             <child>
-              <object class="GtkLabel" id="label44">
+              <object class="GtkLabel" id="Ch">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="label" translatable="yes">چهارشنبه</property>
@@ -126,7 +126,7 @@
               </packing>
             </child>
             <child>
-              <object class="GtkLabel" id="label45">
+              <object class="GtkLabel" id="Se">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="label" translatable="yes">سه‌شنبه</property>
@@ -138,7 +138,7 @@
               </packing>
             </child>
             <child>
-              <object class="GtkLabel" id="label46">
+              <object class="GtkLabel" id="Do">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="label" translatable="yes">دوشنبه</property>
@@ -150,7 +150,7 @@
               </packing>
             </child>
             <child>
-              <object class="GtkLabel" id="label47">
+              <object class="GtkLabel" id="Ye">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="label" translatable="yes">یک‌شنبه</property>
@@ -162,7 +162,7 @@
               </packing>
             </child>
             <child>
-              <object class="GtkLabel" id="label48">
+              <object class="GtkLabel" id="Sh">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="label" translatable="yes">شنبه</property>
@@ -181,16 +181,22 @@
           </packing>
         </child>
         <child>
-          <object class="GtkBox" id="box3">
+          <object class="GtkBox" id="box0">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="spacing">5</property>
             <property name="homogeneous">True</property>
             <child>
-              <object class="GtkLabel" id="label6">
+              <object class="GtkEventBox" id="eventbox6">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="label">6</property>
+                <child>
+                  <object class="GtkLabel" id="label6">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="label">6</property>
+                  </object>
+                </child>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -199,10 +205,16 @@
               </packing>
             </child>
             <child>
-              <object class="GtkLabel" id="label5">
+              <object class="GtkEventBox" id="eventbox5">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="label">5</property>
+                <child>
+                  <object class="GtkLabel" id="label5">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="label">5</property>
+                  </object>
+                </child>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -211,10 +223,16 @@
               </packing>
             </child>
             <child>
-              <object class="GtkLabel" id="label4">
+              <object class="GtkEventBox" id="eventbox4">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="label">4</property>
+                <child>
+                  <object class="GtkLabel" id="label4">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="label">4</property>
+                  </object>
+                </child>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -223,10 +241,16 @@
               </packing>
             </child>
             <child>
-              <object class="GtkLabel" id="label3">
+              <object class="GtkEventBox" id="eventbox3">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="label">3</property>
+                <child>
+                  <object class="GtkLabel" id="label3">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="label">3</property>
+                  </object>
+                </child>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -235,10 +259,16 @@
               </packing>
             </child>
             <child>
-              <object class="GtkLabel" id="label2">
+              <object class="GtkEventBox" id="eventbox2">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="label">2</property>
+                <child>
+                  <object class="GtkLabel" id="label2">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="label">2</property>
+                  </object>
+                </child>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -247,10 +277,16 @@
               </packing>
             </child>
             <child>
-              <object class="GtkLabel" id="label1">
+              <object class="GtkEventBox" id="eventbox1">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="label">1</property>
+                <child>
+                  <object class="GtkLabel" id="label1">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="label">1</property>
+                  </object>
+                </child>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -259,10 +295,16 @@
               </packing>
             </child>
             <child>
-              <object class="GtkLabel" id="label0">
+              <object class="GtkEventBox" id="eventbox0">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="label">0</property>
+                <child>
+                  <object class="GtkLabel" id="label0">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="label">0</property>
+                  </object>
+                </child>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -278,16 +320,22 @@
           </packing>
         </child>
         <child>
-          <object class="GtkBox" id="box4">
+          <object class="GtkBox" id="box1">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="spacing">5</property>
             <property name="homogeneous">True</property>
             <child>
-              <object class="GtkLabel" id="label13">
+              <object class="GtkEventBox" id="eventbox13">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="label">13</property>
+                <child>
+                  <object class="GtkLabel" id="label13">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="label">13</property>
+                  </object>
+                </child>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -296,10 +344,16 @@
               </packing>
             </child>
             <child>
-              <object class="GtkLabel" id="label12">
+              <object class="GtkEventBox" id="eventbox12">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="label">12</property>
+                <child>
+                  <object class="GtkLabel" id="label12">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="label">12</property>
+                  </object>
+                </child>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -308,10 +362,16 @@
               </packing>
             </child>
             <child>
-              <object class="GtkLabel" id="label11">
+              <object class="GtkEventBox" id="eventbox11">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="label">11</property>
+                <child>
+                  <object class="GtkLabel" id="label11">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="label">11</property>
+                  </object>
+                </child>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -320,10 +380,16 @@
               </packing>
             </child>
             <child>
-              <object class="GtkLabel" id="label10">
+              <object class="GtkEventBox" id="eventbox10">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="label">10</property>
+                <child>
+                  <object class="GtkLabel" id="label10">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="label">10</property>
+                  </object>
+                </child>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -332,10 +398,16 @@
               </packing>
             </child>
             <child>
-              <object class="GtkLabel" id="label9">
+              <object class="GtkEventBox" id="eventbox9">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="label">9</property>
+                <child>
+                  <object class="GtkLabel" id="label9">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="label">9</property>
+                  </object>
+                </child>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -344,10 +416,16 @@
               </packing>
             </child>
             <child>
-              <object class="GtkLabel" id="label8">
+              <object class="GtkEventBox" id="eventbox8">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="label">8</property>
+                <child>
+                  <object class="GtkLabel" id="label8">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="label">8</property>
+                  </object>
+                </child>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -356,10 +434,16 @@
               </packing>
             </child>
             <child>
-              <object class="GtkLabel" id="label7">
+              <object class="GtkEventBox" id="eventbox7">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="label">7</property>
+                <child>
+                  <object class="GtkLabel" id="label7">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="label">7</property>
+                  </object>
+                </child>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -375,16 +459,22 @@
           </packing>
         </child>
         <child>
-          <object class="GtkBox" id="box5">
+          <object class="GtkBox" id="box2">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="spacing">5</property>
             <property name="homogeneous">True</property>
             <child>
-              <object class="GtkLabel" id="label20">
+              <object class="GtkEventBox" id="eventbox20">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="label">20</property>
+                <child>
+                  <object class="GtkLabel" id="label20">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="label">20</property>
+                  </object>
+                </child>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -393,10 +483,16 @@
               </packing>
             </child>
             <child>
-              <object class="GtkLabel" id="label19">
+              <object class="GtkEventBox" id="eventbox19">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="label">19</property>
+                <child>
+                  <object class="GtkLabel" id="label19">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="label">19</property>
+                  </object>
+                </child>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -405,10 +501,16 @@
               </packing>
             </child>
             <child>
-              <object class="GtkLabel" id="label18">
+              <object class="GtkEventBox" id="eventbox18">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="label">18</property>
+                <child>
+                  <object class="GtkLabel" id="label18">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="label">18</property>
+                  </object>
+                </child>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -417,10 +519,16 @@
               </packing>
             </child>
             <child>
-              <object class="GtkLabel" id="label17">
+              <object class="GtkEventBox" id="eventbox17">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="label">17</property>
+                <child>
+                  <object class="GtkLabel" id="label17">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="label">17</property>
+                  </object>
+                </child>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -429,10 +537,16 @@
               </packing>
             </child>
             <child>
-              <object class="GtkLabel" id="label16">
+              <object class="GtkEventBox" id="eventbox16">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="label">16</property>
+                <child>
+                  <object class="GtkLabel" id="label16">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="label">16</property>
+                  </object>
+                </child>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -441,10 +555,16 @@
               </packing>
             </child>
             <child>
-              <object class="GtkLabel" id="label15">
+              <object class="GtkEventBox" id="eventbox15">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="label">15</property>
+                <child>
+                  <object class="GtkLabel" id="label15">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="label">15</property>
+                  </object>
+                </child>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -453,10 +573,16 @@
               </packing>
             </child>
             <child>
-              <object class="GtkLabel" id="label14">
+              <object class="GtkEventBox" id="eventbox14">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="label">14</property>
+                <child>
+                  <object class="GtkLabel" id="label14">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="label">14</property>
+                  </object>
+                </child>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -472,16 +598,22 @@
           </packing>
         </child>
         <child>
-          <object class="GtkBox" id="box6">
+          <object class="GtkBox" id="box3">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="spacing">5</property>
             <property name="homogeneous">True</property>
             <child>
-              <object class="GtkLabel" id="label27">
+              <object class="GtkEventBox" id="eventbox27">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="label">27</property>
+                <child>
+                  <object class="GtkLabel" id="label27">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="label">27</property>
+                  </object>
+                </child>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -490,10 +622,16 @@
               </packing>
             </child>
             <child>
-              <object class="GtkLabel" id="label26">
+              <object class="GtkEventBox" id="eventbox26">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="label">26</property>
+                <child>
+                  <object class="GtkLabel" id="label26">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="label">26</property>
+                  </object>
+                </child>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -502,10 +640,16 @@
               </packing>
             </child>
             <child>
-              <object class="GtkLabel" id="label25">
+              <object class="GtkEventBox" id="eventbox25">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="label">25</property>
+                <child>
+                  <object class="GtkLabel" id="label25">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="label">25</property>
+                  </object>
+                </child>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -514,10 +658,16 @@
               </packing>
             </child>
             <child>
-              <object class="GtkLabel" id="label24">
+              <object class="GtkEventBox" id="eventbox24">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="label">24</property>
+                <child>
+                  <object class="GtkLabel" id="label24">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="label">24</property>
+                  </object>
+                </child>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -526,10 +676,16 @@
               </packing>
             </child>
             <child>
-              <object class="GtkLabel" id="label23">
+              <object class="GtkEventBox" id="eventbox23">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="label">23</property>
+                <child>
+                  <object class="GtkLabel" id="label23">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="label">23</property>
+                  </object>
+                </child>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -538,10 +694,16 @@
               </packing>
             </child>
             <child>
-              <object class="GtkLabel" id="label22">
+              <object class="GtkEventBox" id="eventbox22">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="label">22</property>
+                <child>
+                  <object class="GtkLabel" id="label22">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="label">22</property>
+                  </object>
+                </child>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -550,10 +712,16 @@
               </packing>
             </child>
             <child>
-              <object class="GtkLabel" id="label21">
+              <object class="GtkEventBox" id="eventbox21">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="label">21</property>
+                <child>
+                  <object class="GtkLabel" id="label21">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="label">21</property>
+                  </object>
+                </child>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -569,16 +737,22 @@
           </packing>
         </child>
         <child>
-          <object class="GtkBox" id="box7">
+          <object class="GtkBox" id="box4">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="spacing">5</property>
             <property name="homogeneous">True</property>
             <child>
-              <object class="GtkLabel" id="label34">
+              <object class="GtkEventBox" id="eventbox34">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="label">34</property>
+                <child>
+                  <object class="GtkLabel" id="label34">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="label">34</property>
+                  </object>
+                </child>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -587,10 +761,16 @@
               </packing>
             </child>
             <child>
-              <object class="GtkLabel" id="label33">
+              <object class="GtkEventBox" id="eventbox33">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="label">33</property>
+                <child>
+                  <object class="GtkLabel" id="label33">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="label">33</property>
+                  </object>
+                </child>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -599,10 +779,16 @@
               </packing>
             </child>
             <child>
-              <object class="GtkLabel" id="label32">
+              <object class="GtkEventBox" id="eventbox32">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="label">32</property>
+                <child>
+                  <object class="GtkLabel" id="label32">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="label">32</property>
+                  </object>
+                </child>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -611,10 +797,16 @@
               </packing>
             </child>
             <child>
-              <object class="GtkLabel" id="label31">
+              <object class="GtkEventBox" id="eventbox31">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="label">31</property>
+                <child>
+                  <object class="GtkLabel" id="label31">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="label">31</property>
+                  </object>
+                </child>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -623,10 +815,16 @@
               </packing>
             </child>
             <child>
-              <object class="GtkLabel" id="label30">
+              <object class="GtkEventBox" id="eventbox30">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="label">30</property>
+                <child>
+                  <object class="GtkLabel" id="label30">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="label">30</property>
+                  </object>
+                </child>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -635,10 +833,16 @@
               </packing>
             </child>
             <child>
-              <object class="GtkLabel" id="label29">
+              <object class="GtkEventBox" id="eventbox29">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="label">29</property>
+                <child>
+                  <object class="GtkLabel" id="label29">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="label">29</property>
+                  </object>
+                </child>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -647,10 +851,16 @@
               </packing>
             </child>
             <child>
-              <object class="GtkLabel" id="label28">
+              <object class="GtkEventBox" id="eventbox28">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="label">28</property>
+                <child>
+                  <object class="GtkLabel" id="label28">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="label">28</property>
+                  </object>
+                </child>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -666,16 +876,22 @@
           </packing>
         </child>
         <child>
-          <object class="GtkBox" id="hbox">
+          <object class="GtkBox" id="box5">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="spacing">5</property>
             <property name="homogeneous">True</property>
             <child>
-              <object class="GtkLabel" id="label41">
+              <object class="GtkEventBox" id="eventbox41">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="label">41</property>
+                <child>
+                  <object class="GtkLabel" id="label41">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="label">41</property>
+                  </object>
+                </child>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -684,10 +900,16 @@
               </packing>
             </child>
             <child>
-              <object class="GtkLabel" id="label40">
+              <object class="GtkEventBox" id="eventbox40">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="label">40</property>
+                <child>
+                  <object class="GtkLabel" id="label40">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="label">40</property>
+                  </object>
+                </child>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -696,10 +918,16 @@
               </packing>
             </child>
             <child>
-              <object class="GtkLabel" id="label39">
+              <object class="GtkEventBox" id="eventbox39">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="label">39</property>
+                <child>
+                  <object class="GtkLabel" id="label39">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="label">39</property>
+                  </object>
+                </child>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -708,10 +936,16 @@
               </packing>
             </child>
             <child>
-              <object class="GtkLabel" id="label38">
+              <object class="GtkEventBox" id="eventbox38">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="label">38</property>
+                <child>
+                  <object class="GtkLabel" id="label38">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="label">38</property>
+                  </object>
+                </child>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -720,10 +954,16 @@
               </packing>
             </child>
             <child>
-              <object class="GtkLabel" id="label37">
+              <object class="GtkEventBox" id="eventbox37">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="label">37</property>
+                <child>
+                  <object class="GtkLabel" id="label37">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="label">37</property>
+                  </object>
+                </child>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -732,10 +972,16 @@
               </packing>
             </child>
             <child>
-              <object class="GtkLabel" id="label36">
+              <object class="GtkEventBox" id="eventbox36">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="label">36</property>
+                <child>
+                  <object class="GtkLabel" id="label36">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="label">36</property>
+                  </object>
+                </child>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -744,10 +990,16 @@
               </packing>
             </child>
             <child>
-              <object class="GtkLabel" id="label35">
+              <object class="GtkEventBox" id="eventbox35">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="label">35</property>
+                <child>
+                  <object class="GtkLabel" id="label35">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="label">35</property>
+                  </object>
+                </child>
               </object>
               <packing>
                 <property name="expand">False</property>
