@@ -39,13 +39,17 @@ gchar *persian_digit(gint num)
 
 void showcal(GtkBuilder *builder)
 {
-  GtkWidget *label, *hbox, *monthlabel;
+  GtkWidget *label, *eventbox, *hbox, *monthlabel;
   gint i = 0, weeknum = 0;
-  gchar *setlabel, monthtxt[30], yeartxt[5];
-  GdkRGBA color;
+  gchar *setlabel, *seteventbox, monthtxt[30], yeartxt[5];
+  GtkStyleContext *context;
+  GdkRGBA selected_fg;
+  GdkRGBA selected_bg;
   
-  /* prepare blue highlight color */
-  gdk_rgba_parse(&color, "#3465A4");
+  /* prepare highlight colors */
+  context = gtk_style_context_new();
+  gtk_style_context_lookup_color(context, "selected_fg_color", &selected_fg);
+  gtk_style_context_lookup_color(context, "selected_bg_color", &selected_bg);
   
   /* get times from gtkbuilder */
   struct jtm *mytime = g_object_get_data(G_OBJECT(builder), "mytime");
@@ -73,23 +77,37 @@ void showcal(GtkBuilder *builder)
     
     /* find the correct label for setting the day number */
     setlabel = g_strdup_printf("label%d", weeknum * 7 + tmptime.tm_wday);
-    
-    /* set the day number */
     label = GTK_WIDGET(gtk_builder_get_object(builder, setlabel));
     g_free(setlabel);
+    
+    /* find the correct eventbox for setting the highlight color */
+    seteventbox = g_strdup_printf("eventbox%d", weeknum * 7 + tmptime.tm_wday);
+    eventbox = GTK_WIDGET(gtk_builder_get_object(builder, seteventbox));
+    g_free(seteventbox);
+    
+    /* set the day number */
     gtk_label_set_text(GTK_LABEL(label), persian_digit(i));
     
     /* highlight today */
     if(tmptime.tm_mday == today->tm_mday && 
        tmptime.tm_mon  == today->tm_mon  &&
        tmptime.tm_year == today->tm_year )
-      gtk_widget_override_color(label, GTK_STATE_FLAG_NORMAL, &color);
+    {
+      gtk_widget_override_color(label, GTK_STATE_FLAG_NORMAL, &selected_fg);
+      gtk_widget_override_background_color(eventbox,
+                                           GTK_STATE_FLAG_NORMAL, &selected_bg);
+    }
     else
+    {
       gtk_widget_override_color(label, GTK_STATE_FLAG_NORMAL, NULL);
+      gtk_widget_override_background_color(eventbox,
+                                           GTK_STATE_FLAG_NORMAL, NULL);
+    }
+    
   }
   
   /* hide the last hbox if we have 5 weeks */
-  hbox = GTK_WIDGET(gtk_builder_get_object(builder, "hbox"));
+  hbox = GTK_WIDGET(gtk_builder_get_object(builder, "box5"));
   if(weeknum + 1 == 5)
     gtk_widget_hide(hbox);
   else
