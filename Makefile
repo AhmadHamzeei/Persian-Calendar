@@ -1,5 +1,5 @@
 CFLAGS = `pkg-config --cflags gtk+-3.0`
-LIBS = `pkg-config --libs gtk+-3.0` -ljalali
+LIBS = `pkg-config --libs gtk+-3.0` -ljalali -export-dynamic
 
 SRC = calendar.c
 BIN = calendar.out
