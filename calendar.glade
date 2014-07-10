@@ -189,6 +189,7 @@
               <object class="GtkEventBox" id="eventbox6">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
+                <signal name="button-press-event" handler="on_eventbox_button_press_event" object="window" swapped="no"/>
                 <child>
                   <object class="GtkLabel" id="label6">
                     <property name="visible">True</property>
@@ -207,6 +208,7 @@
               <object class="GtkEventBox" id="eventbox5">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
+                <signal name="button-press-event" handler="on_eventbox_button_press_event" object="window" swapped="no"/>
                 <child>
                   <object class="GtkLabel" id="label5">
                     <property name="visible">True</property>
@@ -225,6 +227,7 @@
               <object class="GtkEventBox" id="eventbox4">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
+                <signal name="button-press-event" handler="on_eventbox_button_press_event" object="window" swapped="no"/>
                 <child>
                   <object class="GtkLabel" id="label4">
                     <property name="visible">True</property>
@@ -243,6 +246,7 @@
               <object class="GtkEventBox" id="eventbox3">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
+                <signal name="button-press-event" handler="on_eventbox_button_press_event" object="window" swapped="no"/>
                 <child>
                   <object class="GtkLabel" id="label3">
                     <property name="visible">True</property>
@@ -261,6 +265,7 @@
               <object class="GtkEventBox" id="eventbox2">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
+                <signal name="button-press-event" handler="on_eventbox_button_press_event" object="window" swapped="no"/>
                 <child>
                   <object class="GtkLabel" id="label2">
                     <property name="visible">True</property>
@@ -279,6 +284,7 @@
               <object class="GtkEventBox" id="eventbox1">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
+                <signal name="button-press-event" handler="on_eventbox_button_press_event" object="window" swapped="no"/>
                 <child>
                   <object class="GtkLabel" id="label1">
                     <property name="visible">True</property>
@@ -297,6 +303,7 @@
               <object class="GtkEventBox" id="eventbox0">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
+                <signal name="button-press-event" handler="on_eventbox_button_press_event" object="window" swapped="no"/>
                 <child>
                   <object class="GtkLabel" id="label0">
                     <property name="visible">True</property>
@@ -328,6 +335,7 @@
               <object class="GtkEventBox" id="eventbox13">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
+                <signal name="button-press-event" handler="on_eventbox_button_press_event" object="window" swapped="no"/>
                 <child>
                   <object class="GtkLabel" id="label13">
                     <property name="visible">True</property>
@@ -346,6 +354,7 @@
               <object class="GtkEventBox" id="eventbox12">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
+                <signal name="button-press-event" handler="on_eventbox_button_press_event" object="window" swapped="no"/>
                 <child>
                   <object class="GtkLabel" id="label12">
                     <property name="visible">True</property>
@@ -364,6 +373,7 @@
               <object class="GtkEventBox" id="eventbox11">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
+                <signal name="button-press-event" handler="on_eventbox_button_press_event" object="window" swapped="no"/>
                 <child>
                   <object class="GtkLabel" id="label11">
                     <property name="visible">True</property>
@@ -382,6 +392,7 @@
               <object class="GtkEventBox" id="eventbox10">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
+                <signal name="button-press-event" handler="on_eventbox_button_press_event" object="window" swapped="no"/>
                 <child>
                   <object class="GtkLabel" id="label10">
                     <property name="visible">True</property>
@@ -400,6 +411,7 @@
               <object class="GtkEventBox" id="eventbox9">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
+                <signal name="button-press-event" handler="on_eventbox_button_press_event" object="window" swapped="no"/>
                 <child>
                   <object class="GtkLabel" id="label9">
                     <property name="visible">True</property>
@@ -418,6 +430,7 @@
               <object class="GtkEventBox" id="eventbox8">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
+                <signal name="button-press-event" handler="on_eventbox_button_press_event" object="window" swapped="no"/>
                 <child>
                   <object class="GtkLabel" id="label8">
                     <property name="visible">True</property>
@@ -436,6 +449,7 @@
               <object class="GtkEventBox" id="eventbox7">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
+                <signal name="button-press-event" handler="on_eventbox_button_press_event" object="window" swapped="no"/>
                 <child>
                   <object class="GtkLabel" id="label7">
                     <property name="visible">True</property>
@@ -467,6 +481,7 @@
               <object class="GtkEventBox" id="eventbox20">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
+                <signal name="button-press-event" handler="on_eventbox_button_press_event" object="window" swapped="no"/>
                 <child>
                   <object class="GtkLabel" id="label20">
                     <property name="visible">True</property>
@@ -485,6 +500,7 @@
               <object class="GtkEventBox" id="eventbox19">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
+                <signal name="button-press-event" handler="on_eventbox_button_press_event" object="window" swapped="no"/>
                 <child>
                   <object class="GtkLabel" id="label19">
                     <property name="visible">True</property>
@@ -503,6 +519,7 @@
               <object class="GtkEventBox" id="eventbox18">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
+                <signal name="button-press-event" handler="on_eventbox_button_press_event" object="window" swapped="no"/>
                 <child>
                   <object class="GtkLabel" id="label18">
                     <property name="visible">True</property>
@@ -521,6 +538,7 @@
               <object class="GtkEventBox" id="eventbox17">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
+                <signal name="button-press-event" handler="on_eventbox_button_press_event" object="window" swapped="no"/>
                 <child>
                   <object class="GtkLabel" id="label17">
                     <property name="visible">True</property>
@@ -539,6 +557,7 @@
               <object class="GtkEventBox" id="eventbox16">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
+                <signal name="button-press-event" handler="on_eventbox_button_press_event" object="window" swapped="no"/>
                 <child>
                   <object class="GtkLabel" id="label16">
                     <property name="visible">True</property>
@@ -557,6 +576,7 @@
               <object class="GtkEventBox" id="eventbox15">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
+                <signal name="button-press-event" handler="on_eventbox_button_press_event" object="window" swapped="no"/>
                 <child>
                   <object class="GtkLabel" id="label15">
                     <property name="visible">True</property>
@@ -575,6 +595,7 @@
               <object class="GtkEventBox" id="eventbox14">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
+                <signal name="button-press-event" handler="on_eventbox_button_press_event" object="window" swapped="no"/>
                 <child>
                   <object class="GtkLabel" id="label14">
                     <property name="visible">True</property>
@@ -606,6 +627,7 @@
               <object class="GtkEventBox" id="eventbox27">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
+                <signal name="button-press-event" handler="on_eventbox_button_press_event" object="window" swapped="no"/>
                 <child>
                   <object class="GtkLabel" id="label27">
                     <property name="visible">True</property>
@@ -624,6 +646,7 @@
               <object class="GtkEventBox" id="eventbox26">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
+                <signal name="button-press-event" handler="on_eventbox_button_press_event" object="window" swapped="no"/>
                 <child>
                   <object class="GtkLabel" id="label26">
                     <property name="visible">True</property>
@@ -642,6 +665,7 @@
               <object class="GtkEventBox" id="eventbox25">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
+                <signal name="button-press-event" handler="on_eventbox_button_press_event" object="window" swapped="no"/>
                 <child>
                   <object class="GtkLabel" id="label25">
                     <property name="visible">True</property>
@@ -660,6 +684,7 @@
               <object class="GtkEventBox" id="eventbox24">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
+                <signal name="button-press-event" handler="on_eventbox_button_press_event" object="window" swapped="no"/>
                 <child>
                   <object class="GtkLabel" id="label24">
                     <property name="visible">True</property>
@@ -678,6 +703,7 @@
               <object class="GtkEventBox" id="eventbox23">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
+                <signal name="button-press-event" handler="on_eventbox_button_press_event" object="window" swapped="no"/>
                 <child>
                   <object class="GtkLabel" id="label23">
                     <property name="visible">True</property>
@@ -696,6 +722,7 @@
               <object class="GtkEventBox" id="eventbox22">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
+                <signal name="button-press-event" handler="on_eventbox_button_press_event" object="window" swapped="no"/>
                 <child>
                   <object class="GtkLabel" id="label22">
                     <property name="visible">True</property>
@@ -714,6 +741,7 @@
               <object class="GtkEventBox" id="eventbox21">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
+                <signal name="button-press-event" handler="on_eventbox_button_press_event" object="window" swapped="no"/>
                 <child>
                   <object class="GtkLabel" id="label21">
                     <property name="visible">True</property>
@@ -745,6 +773,7 @@
               <object class="GtkEventBox" id="eventbox34">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
+                <signal name="button-press-event" handler="on_eventbox_button_press_event" object="window" swapped="no"/>
                 <child>
                   <object class="GtkLabel" id="label34">
                     <property name="visible">True</property>
@@ -763,6 +792,7 @@
               <object class="GtkEventBox" id="eventbox33">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
+                <signal name="button-press-event" handler="on_eventbox_button_press_event" object="window" swapped="no"/>
                 <child>
                   <object class="GtkLabel" id="label33">
                     <property name="visible">True</property>
@@ -781,6 +811,7 @@
               <object class="GtkEventBox" id="eventbox32">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
+                <signal name="button-press-event" handler="on_eventbox_button_press_event" object="window" swapped="no"/>
                 <child>
                   <object class="GtkLabel" id="label32">
                     <property name="visible">True</property>
@@ -799,6 +830,7 @@
               <object class="GtkEventBox" id="eventbox31">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
+                <signal name="button-press-event" handler="on_eventbox_button_press_event" object="window" swapped="no"/>
                 <child>
                   <object class="GtkLabel" id="label31">
                     <property name="visible">True</property>
@@ -817,6 +849,7 @@
               <object class="GtkEventBox" id="eventbox30">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
+                <signal name="button-press-event" handler="on_eventbox_button_press_event" object="window" swapped="no"/>
                 <child>
                   <object class="GtkLabel" id="label30">
                     <property name="visible">True</property>
@@ -835,6 +868,7 @@
               <object class="GtkEventBox" id="eventbox29">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
+                <signal name="button-press-event" handler="on_eventbox_button_press_event" object="window" swapped="no"/>
                 <child>
                   <object class="GtkLabel" id="label29">
                     <property name="visible">True</property>
@@ -853,6 +887,7 @@
               <object class="GtkEventBox" id="eventbox28">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
+                <signal name="button-press-event" handler="on_eventbox_button_press_event" object="window" swapped="no"/>
                 <child>
                   <object class="GtkLabel" id="label28">
                     <property name="visible">True</property>
@@ -884,6 +919,7 @@
               <object class="GtkEventBox" id="eventbox41">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
+                <signal name="button-press-event" handler="on_eventbox_button_press_event" object="window" swapped="no"/>
                 <child>
                   <object class="GtkLabel" id="label41">
                     <property name="visible">True</property>
@@ -902,6 +938,7 @@
               <object class="GtkEventBox" id="eventbox40">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
+                <signal name="button-press-event" handler="on_eventbox_button_press_event" object="window" swapped="no"/>
                 <child>
                   <object class="GtkLabel" id="label40">
                     <property name="visible">True</property>
@@ -920,6 +957,7 @@
               <object class="GtkEventBox" id="eventbox39">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
+                <signal name="button-press-event" handler="on_eventbox_button_press_event" object="window" swapped="no"/>
                 <child>
                   <object class="GtkLabel" id="label39">
                     <property name="visible">True</property>
@@ -938,6 +976,7 @@
               <object class="GtkEventBox" id="eventbox38">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
+                <signal name="button-press-event" handler="on_eventbox_button_press_event" object="window" swapped="no"/>
                 <child>
                   <object class="GtkLabel" id="label38">
                     <property name="visible">True</property>
@@ -956,6 +995,7 @@
               <object class="GtkEventBox" id="eventbox37">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
+                <signal name="button-press-event" handler="on_eventbox_button_press_event" object="window" swapped="no"/>
                 <child>
                   <object class="GtkLabel" id="label37">
                     <property name="visible">True</property>
@@ -974,6 +1014,7 @@
               <object class="GtkEventBox" id="eventbox36">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
+                <signal name="button-press-event" handler="on_eventbox_button_press_event" object="window" swapped="no"/>
                 <child>
                   <object class="GtkLabel" id="label36">
                     <property name="visible">True</property>
@@ -992,6 +1033,7 @@
               <object class="GtkEventBox" id="eventbox35">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
+                <signal name="button-press-event" handler="on_eventbox_button_press_event" object="window" swapped="no"/>
                 <child>
                   <object class="GtkLabel" id="label35">
                     <property name="visible">True</property>
