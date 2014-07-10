@@ -10,23 +10,40 @@ void clearcolor(GtkWidget *label,
 }
 
 /* function to highlight label */
-void highlight(GtkWidget *label,
-               GtkWidget *eventbox)
+void highlight(GtkWidget *eventbox,
+               GtkWidget *window)
 {
-  GtkWidget *lighted_label, *lighted_eventbox;
+  GtkWidget *label, *lighted_eventbox, *lighted_label;
+  GList *child;
   GtkStyleContext *context;
   GdkRGBA selected_fg;
   GdkRGBA selected_bg;
+  
+  /* get label from eventbox */
+  child = gtk_container_get_children(GTK_CONTAINER(eventbox));
+  label = child->data;
   
   /* prepare highlight colors */
   context = gtk_style_context_new();
   gtk_style_context_lookup_color(context, "selected_fg_color", &selected_fg);
   gtk_style_context_lookup_color(context, "selected_bg_color", &selected_bg);
   
+  /* clearcolor previous highlighted label */
+  lighted_eventbox = g_object_get_data(G_OBJECT(window), "lighted_eventbox");
+  if(lighted_eventbox)
+  {
+    child = gtk_container_get_children(GTK_CONTAINER(lighted_eventbox));
+    lighted_label = child->data;
+    clearcolor(lighted_label, lighted_eventbox);
+  }
+  
   /* apply color */
   gtk_widget_override_color(label, GTK_STATE_FLAG_NORMAL, &selected_fg);
   gtk_widget_override_background_color(eventbox,
                                        GTK_STATE_FLAG_NORMAL, &selected_bg);
+  
+  /* set current eventbox as lighted */
+  g_object_set_data(G_OBJECT(window), "lighted_eventbox", eventbox);
 }
 
 /* function to clear label */
@@ -47,9 +64,10 @@ void clearcal(GtkBuilder *builder)
     eventbox = GTK_WIDGET(gtk_builder_get_object(builder, seteventbox));
     g_free(seteventbox);
     
-    /* clear label color & text */
+    /* clear label color & text & day */
     clearcolor(label, eventbox);
     gtk_label_set_text(GTK_LABEL(label), NULL);
+    g_object_set_data(G_OBJECT(eventbox), "day", NULL);
   }
 }
 
@@ -71,13 +89,15 @@ gchar *persian_digit(gint num)
 
 void showcal(GtkBuilder *builder)
 {
-  GtkWidget *label, *eventbox, *hbox;
+  GtkWidget *label, *eventbox, *hbox, *window;
   gint i = 0, weeknum = 0;
-  gchar *setlabel, *seteventbox, monthtxt[30], yeartxt[5];
+  gchar *setlabel, *seteventbox, monthtxt[30], yeartxt[5], *day;
   
   /* get times from gtkbuilder */
   struct jtm *mytime = g_object_get_data(G_OBJECT(builder), "mytime");
   struct jtm *today  = g_object_get_data(G_OBJECT(builder), "today" );
+  
+  window = GTK_WIDGET(gtk_builder_get_object(builder, "window"));
   
   /* make a temporary time variable to use with while loop */
   struct jtm tmptime = *mytime;
@@ -112,11 +132,15 @@ void showcal(GtkBuilder *builder)
     /* set the day number */
     gtk_label_set_text(GTK_LABEL(label), persian_digit(i));
     
+    /* set day to eventbox */
+    day = g_strdup_printf("%d/%d", tmptime.tm_mon + 1, tmptime.tm_mday);
+    g_object_set_data(G_OBJECT(eventbox), "day", day);
+    
     /* highlight today */
     if(tmptime.tm_mday == today->tm_mday && 
        tmptime.tm_mon  == today->tm_mon  &&
        tmptime.tm_year == today->tm_year )
-      highlight(label, eventbox);
+      highlight(eventbox, window);
   }
   
   /* hide the last hbox if we have 5 weeks */
@@ -171,11 +195,24 @@ void on_pre_button_click(GtkButton *button,
   showcal(builder);
 }
 
+gboolean on_eventbox_button_press_event(GtkWidget *eventbox, 
+                                        GdkEventButton *event, 
+                                        GtkWidget *window)
+{
+  /* get day status from eventbox */
+  gchar *day = g_object_get_data(G_OBJECT(eventbox), "day");
+  
+  if (event->type == GDK_BUTTON_PRESS && day)
+    highlight(eventbox, window);
+  
+  return FALSE;
+}
+
 int main(int argc,
          char *argv[])
 {
   GtkBuilder *builder;
-  GtkWidget *window, *pre_button, *next_button;
+  GtkWidget *pre_button, *next_button;
   struct jtm mytime, today;
   time_t now;
   
@@ -197,7 +234,6 @@ int main(int argc,
   g_object_set_data(G_OBJECT(builder), "today", &today);
   
   /* get ui elements from gtkbuilder */
-  window = GTK_WIDGET(gtk_builder_get_object(builder, "window"));
   pre_button = GTK_WIDGET(gtk_builder_get_object(builder, "pre_button"));
   next_button = GTK_WIDGET(gtk_builder_get_object(builder, "next_button"));
   
