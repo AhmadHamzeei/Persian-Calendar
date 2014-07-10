@@ -4,19 +4,24 @@
 /* function to clear label text */
 void clearcal(GtkBuilder *builder)
 {
-  GtkWidget *label;
+  GtkWidget *label, *eventbox;
   gint i;
-  gchar *setlabel;
+  gchar *setlabel, *seteventbox;
   
   /* we have 42 labels for showing month days, named label0-label41 */
   for(i = 0 ; i <= 41 ; i++)
   {
-    /* find the correct label name */
+    /* find label & eventbox */
     setlabel = g_strdup_printf("label%d", i);
-    
-    /* clear label text */
     label = GTK_WIDGET(gtk_builder_get_object(builder, setlabel));
     g_free(setlabel);
+    seteventbox = g_strdup_printf("eventbox%d", i);
+    eventbox = GTK_WIDGET(gtk_builder_get_object(builder, seteventbox));
+    g_free(seteventbox);
+    
+    /* clear label color & text */
+    gtk_widget_override_color(label, GTK_STATE_FLAG_NORMAL, NULL);
+    gtk_widget_override_background_color(eventbox, GTK_STATE_FLAG_NORMAL, NULL);
     gtk_label_set_text(GTK_LABEL(label), NULL);
   }
 }
@@ -39,7 +44,7 @@ gchar *persian_digit(gint num)
 
 void showcal(GtkBuilder *builder)
 {
-  GtkWidget *label, *eventbox, *hbox, *monthlabel;
+  GtkWidget *label, *eventbox, *hbox;
   gint i = 0, weeknum = 0;
   gchar *setlabel, *seteventbox, monthtxt[30], yeartxt[5];
   GtkStyleContext *context;
@@ -97,13 +102,6 @@ void showcal(GtkBuilder *builder)
       gtk_widget_override_background_color(eventbox,
                                            GTK_STATE_FLAG_NORMAL, &selected_bg);
     }
-    else
-    {
-      gtk_widget_override_color(label, GTK_STATE_FLAG_NORMAL, NULL);
-      gtk_widget_override_background_color(eventbox,
-                                           GTK_STATE_FLAG_NORMAL, NULL);
-    }
-    
   }
   
   /* hide the last hbox if we have 5 weeks */
@@ -114,15 +112,16 @@ void showcal(GtkBuilder *builder)
     gtk_widget_show(hbox);
   
   /* set month label */
-  monthlabel = GTK_WIDGET(gtk_builder_get_object(builder, "monthlabel"));
+  label = GTK_WIDGET(gtk_builder_get_object(builder, "monthlabel"));
   jstrftime(monthtxt, 30, "%V", mytime);
   jstrftime(yeartxt, 5, "%Y", mytime);
   setlabel = g_strconcat(monthtxt, " ", persian_digit(atoi(yeartxt)), NULL);
-  gtk_label_set_text(GTK_LABEL(monthlabel), setlabel);
+  gtk_label_set_text(GTK_LABEL(label), setlabel);
   g_free(setlabel);
 }
 
-void on_next_button_click(GtkButton *button, GtkBuilder *builder)
+void on_next_button_click(GtkButton *button,
+                          GtkBuilder *builder)
 {
   struct jtm *mytime = g_object_get_data(G_OBJECT(builder), "mytime");
   
@@ -139,7 +138,8 @@ void on_next_button_click(GtkButton *button, GtkBuilder *builder)
   showcal(builder);
 }
 
-void on_pre_button_click(GtkButton *button, GtkBuilder *builder)
+void on_pre_button_click(GtkButton *button,
+                         GtkBuilder *builder)
 {
   struct jtm *mytime = g_object_get_data(G_OBJECT(builder), "mytime");
   
@@ -156,7 +156,8 @@ void on_pre_button_click(GtkButton *button, GtkBuilder *builder)
   showcal(builder);
 }
 
-int main(int argc, char *argv[])
+int main(int argc,
+         char *argv[])
 {
   GtkBuilder *builder;
   GtkWidget *window, *pre_button, *next_button;
