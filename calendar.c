@@ -1,7 +1,35 @@
 #include <gtk/gtk.h>
 #include <jalali/jalali.h>
 
-/* function to clear label text */
+/* function to clear label color */
+void clearcolor(GtkWidget *label,
+                GtkWidget *eventbox)
+{
+  gtk_widget_override_color(label, GTK_STATE_FLAG_NORMAL, NULL);
+  gtk_widget_override_background_color(eventbox, GTK_STATE_FLAG_NORMAL, NULL);
+}
+
+/* function to highlight label */
+void highlight(GtkWidget *label,
+               GtkWidget *eventbox)
+{
+  GtkWidget *lighted_label, *lighted_eventbox;
+  GtkStyleContext *context;
+  GdkRGBA selected_fg;
+  GdkRGBA selected_bg;
+  
+  /* prepare highlight colors */
+  context = gtk_style_context_new();
+  gtk_style_context_lookup_color(context, "selected_fg_color", &selected_fg);
+  gtk_style_context_lookup_color(context, "selected_bg_color", &selected_bg);
+  
+  /* apply color */
+  gtk_widget_override_color(label, GTK_STATE_FLAG_NORMAL, &selected_fg);
+  gtk_widget_override_background_color(eventbox,
+                                       GTK_STATE_FLAG_NORMAL, &selected_bg);
+}
+
+/* function to clear label */
 void clearcal(GtkBuilder *builder)
 {
   GtkWidget *label, *eventbox;
@@ -20,8 +48,7 @@ void clearcal(GtkBuilder *builder)
     g_free(seteventbox);
     
     /* clear label color & text */
-    gtk_widget_override_color(label, GTK_STATE_FLAG_NORMAL, NULL);
-    gtk_widget_override_background_color(eventbox, GTK_STATE_FLAG_NORMAL, NULL);
+    clearcolor(label, eventbox);
     gtk_label_set_text(GTK_LABEL(label), NULL);
   }
 }
@@ -47,14 +74,6 @@ void showcal(GtkBuilder *builder)
   GtkWidget *label, *eventbox, *hbox;
   gint i = 0, weeknum = 0;
   gchar *setlabel, *seteventbox, monthtxt[30], yeartxt[5];
-  GtkStyleContext *context;
-  GdkRGBA selected_fg;
-  GdkRGBA selected_bg;
-  
-  /* prepare highlight colors */
-  context = gtk_style_context_new();
-  gtk_style_context_lookup_color(context, "selected_fg_color", &selected_fg);
-  gtk_style_context_lookup_color(context, "selected_bg_color", &selected_bg);
   
   /* get times from gtkbuilder */
   struct jtm *mytime = g_object_get_data(G_OBJECT(builder), "mytime");
@@ -97,11 +116,7 @@ void showcal(GtkBuilder *builder)
     if(tmptime.tm_mday == today->tm_mday && 
        tmptime.tm_mon  == today->tm_mon  &&
        tmptime.tm_year == today->tm_year )
-    {
-      gtk_widget_override_color(label, GTK_STATE_FLAG_NORMAL, &selected_fg);
-      gtk_widget_override_background_color(eventbox,
-                                           GTK_STATE_FLAG_NORMAL, &selected_bg);
-    }
+      highlight(label, eventbox);
   }
   
   /* hide the last hbox if we have 5 weeks */
