@@ -87,6 +87,16 @@ gchar *persian_digit(gint num)
   return number;
 }
 
+/* function to get month name */
+gchar *month_name(struct jtm today)
+{
+  gchar *name;
+  gchar *mon[12] = {"فروردین", "اردیبهشت", "خرداد", "تیر", "مرداد", "شهریور",
+                    "مهر", "آبان", "آذر", "دی", "بهمن", "اسفند"};
+  
+  return mon[today.tm_mon];
+}
+
 void showcal(GtkBuilder *builder)
 {
   GtkWidget *label, *eventbox, *hbox, *window;
@@ -208,6 +218,66 @@ gboolean on_eventbox_button_press_event(GtkWidget *eventbox,
   return FALSE;
 }
 
+void on_tray_icon_activate(GtkStatusIcon *status_icon,
+                           GtkWindow *window)
+{
+  /* show main window & set focus */
+  gtk_window_present(window);
+}
+
+void on_tray_icon_popup_menu(GtkStatusIcon *tray_icon,
+                             guint button,
+                             guint32 activate_time,
+                             gpointer tray_menu)
+{
+    gtk_menu_popup(GTK_MENU(tray_menu), NULL, NULL,
+                   gtk_status_icon_position_menu, tray_icon,
+                   button, activate_time);
+}
+
+void text_request_callback(GtkClipboard *clipboard,
+                           const gchar *text,
+                           gpointer today_text)
+{
+  gtk_clipboard_set_text(clipboard, (gchar*)today_text, -1);
+}
+
+void on_menu_cal_click(GtkMenuItem *item,
+                       gchar *today_text)
+{
+  GtkClipboard *clipboard = gtk_clipboard_get(GDK_SELECTION_CLIPBOARD);;
+  gtk_clipboard_request_text(clipboard, text_request_callback, today_text);
+}
+
+/* functin to create tray icon and it's menu */
+void create_tray_icon(GtkBuilder *builder)
+{
+  GtkWidget *tray_menu, *menu_cal, *menu_exit;
+  GtkStatusIcon *tray_icon;
+  gchar *path, *today_text;
+  
+  struct jtm *today = g_object_get_data(G_OBJECT(builder), "today");
+  tray_icon = GTK_STATUS_ICON(gtk_builder_get_object(builder, "tray_icon"));
+  tray_menu = GTK_WIDGET(gtk_builder_get_object(builder, "tray_menu"));
+  
+  path = g_strdup_printf("./pixmaps/ubuntu-mono-dark/persian-calendar-%d.png",
+                         today->tm_mday);
+  gtk_status_icon_set_from_file(tray_icon, path);
+  
+  today_text = g_strconcat(persian_digit(today->tm_mday), "", month_name(*today)
+                           ,"", persian_digit(today->tm_year), NULL);
+  menu_cal = gtk_menu_item_new_with_label(today_text);
+  menu_exit = gtk_menu_item_new_with_label("خروج");
+  g_signal_connect (menu_cal, "activate",
+                      G_CALLBACK(on_menu_cal_click), (gpointer)today_text);
+  g_signal_connect(menu_exit, "activate",
+                   G_CALLBACK(gtk_main_quit), NULL);
+  gtk_menu_shell_append(GTK_MENU_SHELL(tray_menu), menu_cal);
+  gtk_menu_shell_append(GTK_MENU_SHELL(tray_menu), menu_exit);
+  
+  gtk_widget_show_all(tray_menu);
+}
+
 int main(int argc,
          char *argv[])
 {
@@ -245,6 +315,7 @@ int main(int argc,
   
   /* show initial calendar */
   showcal(builder);
+  create_tray_icon(builder);
   
   gtk_builder_connect_signals(builder, NULL);
   

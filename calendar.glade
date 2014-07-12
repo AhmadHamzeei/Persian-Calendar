@@ -1,13 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <interface>
   <!-- interface-requires gtk+ 3.0 -->
+  <object class="GtkStatusIcon" id="tray_icon">
+    <property name="has_tooltip">True</property>
+    <property name="tooltip_text" translatable="yes">نمایش تقویم</property>
+    <signal name="activate" handler="on_tray_icon_activate" object="window" swapped="no"/>
+    <signal name="popup-menu" handler="on_tray_icon_popup_menu" object="tray_menu" swapped="no"/>
+  </object>
+  <object class="GtkMenu" id="tray_menu">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+  </object>
   <object class="GtkWindow" id="window">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
     <property name="border_width">5</property>
-    <property name="title" translatable="yes">تقویم فارسی</property>
+    <property name="title" translatable="yes">تقویم</property>
     <property name="icon">./pixmaps/calendar.svg</property>
-    <signal name="destroy" handler="gtk_main_quit" swapped="no"/>
+    <signal name="delete-event" handler="gtk_widget_hide_on_delete" swapped="no"/>
     <child>
       <object class="GtkBox" id="mainbox">
         <property name="visible">True</property>
