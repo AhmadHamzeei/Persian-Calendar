@@ -1,0 +1,232 @@
+commit 3153006900e196a8541035bb19c2782cac0f2095
+Author: AhmadHamzeei <ahmadhamzeei@gmail.com>
+Date:   Mon Jul 14 15:17:38 2014 +0430
+
+    resize pngs to fix tray icon
+
+ pixmaps/ubuntu-mono-dark/persian-calendar-23.png |  Bin 13305 -> 9493 bytes
+ pixmaps/ubuntu-mono-dark/persian-calendar-24.png |  Bin 13887 -> 9505 bytes
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 70dae9592bc43b54b8ef0bb262e864af2b4d0308
+Author: AhmadHamzeei <ahmadhamzeei@gmail.com>
+Date:   Mon Jul 14 15:16:34 2014 +0430
+
+    do not show main window at start
+
+ calendar.glade |    1 -
+ 1 file changed, 1 deletion(-)
+
+commit fcee4fd7b70d8d314974ed192ccfe9f11c94e42f
+Author: AhmadHamzeei <ahmadhamzeei@gmail.com>
+Date:   Sat Jul 12 19:04:18 2014 +0430
+
+    update readme
+
+ README.md        |   15 ++++++++++++---
+ pixmaps/acal.png |  Bin 14207 -> 115130 bytes
+ 2 files changed, 12 insertions(+), 3 deletions(-)
+
+commit e9e6447550469289097b36f31fc429d68cedeba1
+Author: AhmadHamzeei <ahmadhamzeei@gmail.com>
+Date:   Sat Jul 12 18:38:19 2014 +0430
+
+    add tray icon
+
+ calendar.c     |   71 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ calendar.glade |   14 +++++++++--
+ 2 files changed, 83 insertions(+), 2 deletions(-)
+
+commit 18c1f9fe778ca1b3b6eb2e50e70b1ccf08449424
+Author: AhmadHamzeei <ahmadhamzeei@gmail.com>
+Date:   Sat Jul 12 18:37:14 2014 +0430
+
+    add icons
+
+ pixmaps/README                                    |    3 +++
+ pixmaps/ubuntu-mono-dark/persian-calendar-1.png   |  Bin 0 -> 7494 bytes
+ pixmaps/ubuntu-mono-dark/persian-calendar-10.png  |  Bin 0 -> 7565 bytes
+ pixmaps/ubuntu-mono-dark/persian-calendar-11.png  |  Bin 0 -> 9579 bytes
+ pixmaps/ubuntu-mono-dark/persian-calendar-12.png  |  Bin 0 -> 11564 bytes
+ pixmaps/ubuntu-mono-dark/persian-calendar-13.png  |  Bin 0 -> 11560 bytes
+ pixmaps/ubuntu-mono-dark/persian-calendar-14.png  |  Bin 0 -> 12047 bytes
+ pixmaps/ubuntu-mono-dark/persian-calendar-15.png  |  Bin 0 -> 14653 bytes
+ pixmaps/ubuntu-mono-dark/persian-calendar-16.png  |  Bin 0 -> 12683 bytes
+ pixmaps/ubuntu-mono-dark/persian-calendar-17.png  |  Bin 0 -> 12343 bytes
+ pixmaps/ubuntu-mono-dark/persian-calendar-18.png  |  Bin 0 -> 12380 bytes
+ pixmaps/ubuntu-mono-dark/persian-calendar-19.png  |  Bin 0 -> 12946 bytes
+ pixmaps/ubuntu-mono-dark/persian-calendar-2.png   |  Bin 0 -> 9486 bytes
+ pixmaps/ubuntu-mono-dark/persian-calendar-20.png  |  Bin 0 -> 9573 bytes
+ pixmaps/ubuntu-mono-dark/persian-calendar-21.png  |  Bin 0 -> 11588 bytes
+ pixmaps/ubuntu-mono-dark/persian-calendar-22.png  |  Bin 0 -> 13206 bytes
+ pixmaps/ubuntu-mono-dark/persian-calendar-23.png  |  Bin 0 -> 13305 bytes
+ pixmaps/ubuntu-mono-dark/persian-calendar-24.png  |  Bin 0 -> 13887 bytes
+ pixmaps/ubuntu-mono-dark/persian-calendar-25.png  |  Bin 0 -> 16581 bytes
+ pixmaps/ubuntu-mono-dark/persian-calendar-26.png  |  Bin 0 -> 14507 bytes
+ pixmaps/ubuntu-mono-dark/persian-calendar-27.png  |  Bin 0 -> 14222 bytes
+ pixmaps/ubuntu-mono-dark/persian-calendar-28.png  |  Bin 0 -> 14321 bytes
+ pixmaps/ubuntu-mono-dark/persian-calendar-29.png  |  Bin 0 -> 14819 bytes
+ pixmaps/ubuntu-mono-dark/persian-calendar-3.png   |  Bin 0 -> 9438 bytes
+ pixmaps/ubuntu-mono-dark/persian-calendar-30.png  |  Bin 0 -> 9530 bytes
+ pixmaps/ubuntu-mono-dark/persian-calendar-31.png  |  Bin 0 -> 11555 bytes
+ pixmaps/ubuntu-mono-dark/persian-calendar-4.png   |  Bin 0 -> 9857 bytes
+ pixmaps/ubuntu-mono-dark/persian-calendar-5.png   |  Bin 0 -> 12410 bytes
+ pixmaps/ubuntu-mono-dark/persian-calendar-6.png   |  Bin 0 -> 10118 bytes
+ pixmaps/ubuntu-mono-dark/persian-calendar-7.png   |  Bin 0 -> 10098 bytes
+ pixmaps/ubuntu-mono-dark/persian-calendar-8.png   |  Bin 0 -> 10164 bytes
+ pixmaps/ubuntu-mono-dark/persian-calendar-9.png   |  Bin 0 -> 10498 bytes
+ pixmaps/ubuntu-mono-light/persian-calendar-1.png  |  Bin 0 -> 7926 bytes
+ pixmaps/ubuntu-mono-light/persian-calendar-10.png |  Bin 0 -> 7984 bytes
+ pixmaps/ubuntu-mono-light/persian-calendar-11.png |  Bin 0 -> 10071 bytes
+ pixmaps/ubuntu-mono-light/persian-calendar-12.png |  Bin 0 -> 12073 bytes
+ pixmaps/ubuntu-mono-light/persian-calendar-13.png |  Bin 0 -> 12134 bytes
+ pixmaps/ubuntu-mono-light/persian-calendar-14.png |  Bin 0 -> 12526 bytes
+ pixmaps/ubuntu-mono-light/persian-calendar-15.png |  Bin 0 -> 15191 bytes
+ pixmaps/ubuntu-mono-light/persian-calendar-16.png |  Bin 0 -> 13113 bytes
+ pixmaps/ubuntu-mono-light/persian-calendar-17.png |  Bin 0 -> 12827 bytes
+ pixmaps/ubuntu-mono-light/persian-calendar-18.png |  Bin 0 -> 12927 bytes
+ pixmaps/ubuntu-mono-light/persian-calendar-19.png |  Bin 0 -> 13450 bytes
+ pixmaps/ubuntu-mono-light/persian-calendar-2.png  |  Bin 0 -> 9975 bytes
+ pixmaps/ubuntu-mono-light/persian-calendar-20.png |  Bin 0 -> 10060 bytes
+ pixmaps/ubuntu-mono-light/persian-calendar-21.png |  Bin 0 -> 12096 bytes
+ pixmaps/ubuntu-mono-light/persian-calendar-22.png |  Bin 0 -> 13792 bytes
+ pixmaps/ubuntu-mono-light/persian-calendar-23.png |  Bin 0 -> 13893 bytes
+ pixmaps/ubuntu-mono-light/persian-calendar-24.png |  Bin 0 -> 14431 bytes
+ pixmaps/ubuntu-mono-light/persian-calendar-25.png |  Bin 0 -> 17171 bytes
+ pixmaps/ubuntu-mono-light/persian-calendar-26.png |  Bin 0 -> 15014 bytes
+ pixmaps/ubuntu-mono-light/persian-calendar-27.png |  Bin 0 -> 14787 bytes
+ pixmaps/ubuntu-mono-light/persian-calendar-28.png |  Bin 0 -> 14948 bytes
+ pixmaps/ubuntu-mono-light/persian-calendar-29.png |  Bin 0 -> 15435 bytes
+ pixmaps/ubuntu-mono-light/persian-calendar-3.png  |  Bin 0 -> 9920 bytes
+ pixmaps/ubuntu-mono-light/persian-calendar-30.png |  Bin 0 -> 10016 bytes
+ pixmaps/ubuntu-mono-light/persian-calendar-31.png |  Bin 0 -> 12108 bytes
+ pixmaps/ubuntu-mono-light/persian-calendar-4.png  |  Bin 0 -> 10323 bytes
+ pixmaps/ubuntu-mono-light/persian-calendar-5.png  |  Bin 0 -> 12979 bytes
+ pixmaps/ubuntu-mono-light/persian-calendar-6.png  |  Bin 0 -> 10556 bytes
+ pixmaps/ubuntu-mono-light/persian-calendar-7.png  |  Bin 0 -> 10535 bytes
+ pixmaps/ubuntu-mono-light/persian-calendar-8.png  |  Bin 0 -> 10683 bytes
+ pixmaps/ubuntu-mono-light/persian-calendar-9.png  |  Bin 0 -> 10939 bytes
+ 63 files changed, 3 insertions(+)
+
+commit a8d9ebc95640cdf0b6d80ab4e3e4a946b8dd1cfd
+Author: AhmadHamzeei <ahmadhamzeei@gmail.com>
+Date:   Thu Jul 10 19:01:00 2014 +0430
+
+    connect eventbox signals
+
+ calendar.glade |   42 ++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 42 insertions(+)
+
+commit 303853ab97341e67e67b8cf3b52239473f4f7fc6
+Author: AhmadHamzeei <ahmadhamzeei@gmail.com>
+Date:   Thu Jul 10 19:00:37 2014 +0430
+
+    add eventbox click function
+
+ calendar.c |   54 +++++++++++++++++++++++++++++++++++++++++++++---------
+ 1 file changed, 45 insertions(+), 9 deletions(-)
+
+commit ca40d4e434703711174172d4b2df402657a620c6
+Author: AhmadHamzeei <ahmadhamzeei@gmail.com>
+Date:   Thu Jul 10 14:57:55 2014 +0430
+
+    add highlight function
+
+ calendar.c     |   47 +++++++++++++++++++++++++++++++----------------
+ calendar.glade |    1 -
+ 2 files changed, 31 insertions(+), 17 deletions(-)
+
+commit cbcf1c77c49781eb4ceed424e0943b66574343e8
+Author: AhmadHamzeei <ahmadhamzeei@gmail.com>
+Date:   Thu Jul 10 14:17:59 2014 +0430
+
+    export-dynamic needed for connecting signals
+
+ Makefile |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit f8c7efefdf15430fdedc3d179612e08d2a217aaa
+Author: AhmadHamzeei <ahmadhamzeei@gmail.com>
+Date:   Thu Jul 10 14:17:08 2014 +0430
+
+    add clear label color to clearcal function
+
+ calendar.c |   37 +++++++++++++++++++------------------
+ 1 file changed, 19 insertions(+), 18 deletions(-)
+
+commit 99bcbc86dc6acb9802d892b5dcf766ddea3719b2
+Author: AhmadHamzeei <ahmadhamzeei@gmail.com>
+Date:   Wed Jul 9 21:39:08 2014 +0430
+
+    get color from theme, new highlight method
+
+ calendar.c |   36 +++++++++++++++++++++++++++---------
+ 1 file changed, 27 insertions(+), 9 deletions(-)
+
+commit 11ce9416470afb80b6c31a44a30b97862504a722
+Author: AhmadHamzeei <ahmadhamzeei@gmail.com>
+Date:   Wed Jul 9 21:14:24 2014 +0430
+
+    add eventbox for each label
+
+ calendar.glade |  450 +++++++++++++++++++++++++++++++++++++++++++-------------
+ 1 file changed, 351 insertions(+), 99 deletions(-)
+
+commit 4597d27929bea833bc6bf532cb8a3b288c73d46f
+Author: AhmadHamzeei <ahmadhamzeei@gmail.com>
+Date:   Mon Jul 7 23:12:01 2014 +0430
+
+    remove unused hesders
+
+ calendar.c |    2 --
+ 1 file changed, 2 deletions(-)
+
+commit a25193ddbe17dbc28bba2a41b79ee680f9f85f24
+Author: AhmadHamzeei <ahmadhamzeei@gmail.com>
+Date:   Mon Jul 7 14:55:42 2014 +0430
+
+    add screenshot
+
+ pixmaps/acal.png |  Bin 0 -> 14207 bytes
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit d8e085cfc6c8080f45dc32c3ea192d8fc1ce450e
+Author: AhmadHamzeei <ahmadhamzeei@gmail.com>
+Date:   Mon Jul 7 13:47:37 2014 +0430
+
+    new method for persian_digit function
+
+ calendar.c |   18 +++++++-----------
+ 1 file changed, 7 insertions(+), 11 deletions(-)
+
+commit 04aa91e71c94ec34e7fdc2d3edfe1b2b8207dc11
+Author: AhmadHamzeei <ahmadhamzeei@gmail.com>
+Date:   Sun Jul 6 22:56:28 2014 +0430
+
+    update readme
+
+ README.md |   10 ++++++++++
+ 1 file changed, 10 insertions(+)
+
+commit d057af344991eb4b7a3b9b7f796b9197871eac45
+Author: AhmadHamzeei <ahmadhamzeei@gmail.com>
+Date:   Sun Jul 6 22:53:40 2014 +0430
+
+    add src
+
+ Makefile             |   11 +
+ calendar.c           |  190 +++++++++++++
+ calendar.glade       |  768 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ pixmaps/calendar.svg |  429 ++++++++++++++++++++++++++++
+ 4 files changed, 1398 insertions(+)
+
+commit d1c46f427159e36ccfadd19d69245b7d4bd62226
+Author: AhmadHamzeei <ahmadhamzeei@gmail.com>
+Date:   Sun Jul 6 22:45:25 2014 +0430
+
+    Initial commit
+
+ .gitignore |   23 +++
+ LICENSE    |  674 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ README.md  |    4 +
+ 3 files changed, 701 insertions(+)

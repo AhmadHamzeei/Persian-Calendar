@@ -1,0 +1,7 @@
+[encoding: UTF-8]
+# List of source files containing translatable strings.
+# Please keep this file sorted alphabetically.
+data/acal.desktop.in
+src/acal.c
+src/resources/calendar.glade
+

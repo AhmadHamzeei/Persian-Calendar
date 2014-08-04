@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.0
+Type=Application
+_Name=Acal
+_GenericName=Calendar
+_X-GNOME-FullName=Acal Calendar
+_Comment=Simple persian calendar
+Exec=acal
+Icon=acal
+Terminal=false
+Categories=Utility;Calendar;GTK;

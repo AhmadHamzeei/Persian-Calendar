@@ -1,0 +1,192 @@
+# Persian translations for acal package.
+# Copyright (C) 2014 Ahmad Hamzeei
+# This file is distributed under the same license as the acal package.
+# ahmad <ahmadhamzeei@gmail.com>, 2014.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: acal 0.1\n"
+"Report-Msgid-Bugs-To: ahmadhamzeei@gmail.com\n"
+"POT-Creation-Date: 2014-08-04 20:58+0430\n"
+"PO-Revision-Date: 2014-08-04 20:59+0330\n"
+"Last-Translator: Ahmad Hamzeei <ahmadhamzeei@gmail.com>\n"
+"Language-Team: Persian <translation-team-fa@lists.sourceforge.net>\n"
+"Language: fa\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. create a notify with today_text when app activates
+#: ../data/acal.desktop.in.h:1 ../src/acal.c:319
+#: ../src/resources/calendar.glade.h:1
+msgid "Acal"
+msgstr "تقویم"
+
+#: ../data/acal.desktop.in.h:2
+msgid "Calendar"
+msgstr "تقویم"
+
+#: ../data/acal.desktop.in.h:3
+msgid "Acal Calendar"
+msgstr "تقویم Acal"
+
+#: ../data/acal.desktop.in.h:4
+msgid "Simple persian calendar"
+msgstr "تقویم فارسی ساده"
+
+#. day & month names
+#: ../src/acal.c:38
+msgid "Shanbeh"
+msgstr "شنبه"
+
+#: ../src/acal.c:38
+msgid "Yek-Shanbeh"
+msgstr "یک‌شنبه"
+
+#: ../src/acal.c:38
+msgid "Do-Shanbeh"
+msgstr "دوشنبه"
+
+#: ../src/acal.c:39
+msgid "Seh-Shanbeh"
+msgstr "سه‌شنبه"
+
+#: ../src/acal.c:39
+msgid "Chahaar-Shanbeh"
+msgstr "چهارشنبه"
+
+#: ../src/acal.c:40
+msgid "Panj-Shanbeh"
+msgstr "پنج‌شنبه"
+
+#: ../src/acal.c:40
+msgid "Jomeh"
+msgstr "جمعه"
+
+#: ../src/acal.c:41
+msgid "Farvardin"
+msgstr "فروردین"
+
+#: ../src/acal.c:41
+msgid "Ordibehesht"
+msgstr "اردیبهشت"
+
+#: ../src/acal.c:41
+msgid "Khordaad"
+msgstr "خرداد"
+
+#: ../src/acal.c:41
+msgid "Tir"
+msgstr "تیر"
+
+#: ../src/acal.c:42
+msgid "Mordaad"
+msgstr "مرداد"
+
+#: ../src/acal.c:42
+msgid "Shahrivar"
+msgstr "شهریور"
+
+#: ../src/acal.c:42
+msgid "Mehr"
+msgstr "مهر"
+
+#: ../src/acal.c:42
+msgid "Aabaan"
+msgstr "آبان"
+
+#: ../src/acal.c:43
+msgid "Aazar"
+msgstr "آذر"
+
+#: ../src/acal.c:43
+msgid "Dey"
+msgstr "دی"
+
+#: ../src/acal.c:43
+msgid "Bahman"
+msgstr "بهمن"
+
+#: ../src/acal.c:43
+msgid "Esfand"
+msgstr "اسفند"
+
+#: ../src/acal.c:117
+msgid "0"
+msgstr "۰"
+
+#: ../src/acal.c:117
+msgid "1"
+msgstr "۱"
+
+#: ../src/acal.c:117
+msgid "2"
+msgstr "۲"
+
+#: ../src/acal.c:117
+msgid "3"
+msgstr "۳"
+
+#: ../src/acal.c:117
+msgid "4"
+msgstr "۴"
+
+#: ../src/acal.c:117
+msgid "5"
+msgstr "۵"
+
+#: ../src/acal.c:118
+msgid "6"
+msgstr "۶"
+
+#: ../src/acal.c:118
+msgid "7"
+msgstr "۷"
+
+#: ../src/acal.c:118
+msgid "8"
+msgstr "۸"
+
+#: ../src/acal.c:118
+msgid "9"
+msgstr "۹"
+
+#: ../src/resources/calendar.glade.h:2
+msgid "Quit"
+msgstr "خروج"
+
+#: ../src/resources/calendar.glade.h:3
+msgid "Previous month"
+msgstr "ماه قبل"
+
+#: ../src/resources/calendar.glade.h:4
+msgid "Next month"
+msgstr "ماه بعد"
+
+#: ../src/resources/calendar.glade.h:5
+msgid "Sh"
+msgstr "شنبه"
+
+#: ../src/resources/calendar.glade.h:6
+msgid "Ye"
+msgstr "یک‌شنبه"
+
+#: ../src/resources/calendar.glade.h:7
+msgid "Do"
+msgstr "دوشنبه"
+
+#: ../src/resources/calendar.glade.h:8
+msgid "Se"
+msgstr "سه‌شنبه"
+
+#: ../src/resources/calendar.glade.h:9
+msgid "Ch"
+msgstr "چهارشنبه"
+
+#: ../src/resources/calendar.glade.h:10
+msgid "Pa"
+msgstr "پنج‌شنبه"
+
+#: ../src/resources/calendar.glade.h:11
+msgid "Jo"
+msgstr "جمعه"
