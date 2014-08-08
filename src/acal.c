@@ -63,9 +63,13 @@ void highlight(GtkWidget *eventbox)
   label = child->data;
   
   /* prepare highlight colors */
-  context = gtk_style_context_new();
-  gtk_style_context_lookup_color(context, "selected_fg_color", &selected_fg);
-  gtk_style_context_lookup_color(context, "selected_bg_color", &selected_bg);
+  //context = gtk_style_context_new();
+  //gtk_style_context_lookup_color(context, "selected_fg_color", &selected_fg);
+  //gtk_style_context_lookup_color(context, "selected_bg_color", &selected_bg);
+  gdk_rgba_parse(&selected_fg, "#f5f5f5");
+  gdk_rgba_parse(&selected_bg, "#7E9EBD");
+  //gtk_style_context_get_color(context, GTK_STATE_FLAG_NORMAL, &selected_fg);
+  //gtk_style_context_get_background_color(context, GTK_STATE_FLAG_NORMAL, &selected_bg);
   
   /* clearcolor previous highlighted label */
   lighted_eventbox = g_object_get_data(G_OBJECT(builder), "lighted_eventbox");
