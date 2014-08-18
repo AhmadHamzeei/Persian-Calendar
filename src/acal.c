@@ -251,13 +251,14 @@ void on_menu_app_click(GtkMenuItem *item,
   gtk_window_present(window);
 }
 
-void on_menu_cal_click(GtkAction *action,
+void on_menu_cal_click(GtkMenuItem *item,
                        gpointer data)
 {
   const gchar *today_text;
   GtkClipboard *clipboard;
   
-  today_text = gtk_action_get_label(action);
+  today_text = gtk_menu_item_get_label(item);
+  
   /* tell the clipboard manager to make the data persistent */
   clipboard = gtk_clipboard_get(GDK_SELECTION_CLIPBOARD);
   gtk_clipboard_set_can_store(clipboard, NULL, 0);
@@ -277,10 +278,10 @@ void time_gen(void)
 
 void update_tray(AppIndicator *indicator)
 {
-  GtkAction *action;
+  GtkMenuItem *menu_cal;
   gchar *icon_name, *today_text;
   
-  action = GTK_ACTION(gtk_builder_get_object(builder, "menu_cal_action"));
+  menu_cal = GTK_MENU_ITEM(gtk_builder_get_object(builder, "menu_cal"));
   
   /* set tray icon */
   icon_name = g_strdup_printf("persian-calendar-%d", today.tm_mday);
@@ -292,7 +293,7 @@ void update_tray(AppIndicator *indicator)
                                persian_digit(today.tm_mday),
                                gettext(mon[today.tm_mon]),
                                persian_digit(today.tm_year));
-  gtk_action_set_label(action, today_text);
+  gtk_menu_item_set_label(menu_cal, today_text);
   g_free(today_text);
 }
 
@@ -312,12 +313,12 @@ gboolean check_update_tray(gpointer indicator)
 void activate(GApplication *app,
               gpointer user_data)
 {
-  GtkAction *action;
+  GtkMenuItem *menu_cal;
   const gchar *today_text;
   GNotification *notification;
   
-  action = GTK_ACTION(gtk_builder_get_object(builder, "menu_cal_action"));
-  today_text = gtk_action_get_label(action);
+  menu_cal = GTK_MENU_ITEM(gtk_builder_get_object(builder, "menu_cal"));
+  today_text = gtk_menu_item_get_label(menu_cal);
   
   /* create a notify with today_text when app activates */
   notification = g_notification_new(_("Acal"));
@@ -331,8 +332,6 @@ void startup(GApplication *app,
 {
   AppIndicator *indicator;
   GtkMenu *tray_menu;
-  GtkAction *action;
-  GtkWidget *menu_cal;
   GtkWindow *window;
   gchar *theme_path;
   
@@ -341,19 +340,15 @@ void startup(GApplication *app,
   gtk_builder_add_from_resource(builder, "/ui/calendar.glade", NULL);
   gtk_builder_connect_signals(builder, NULL);
   
-  /* set gtkapplication window */
   window = GTK_WINDOW(gtk_builder_get_object(builder, "window"));
+  tray_menu = GTK_MENU(gtk_builder_get_object(builder, "tray_menu"));
+  
+  /* set gtkapplication window */
   gtk_application_add_window(GTK_APPLICATION(app), window);
   
   /* initialize our time */
   time_gen();
   mytime = today;
-  
-  /* create menu_cal item & add it to tray_menu */
-  action = GTK_ACTION(gtk_builder_get_object(builder, "menu_cal_action"));
-  tray_menu = GTK_MENU(gtk_builder_get_object(builder, "tray_menu"));
-  menu_cal = gtk_action_create_menu_item(action);
-  gtk_menu_shell_prepend(GTK_MENU_SHELL(tray_menu), menu_cal);
   
   /* prepare appindicator */
   theme_path = g_build_filename(DATADIR, "icons", "ubuntu-mono-dark",

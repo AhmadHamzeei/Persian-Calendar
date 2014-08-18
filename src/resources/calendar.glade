@@ -1,44 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated with glade 3.16.1 -->
 <interface>
-  <!-- interface-requires gtk+ 3.0 -->
-  <object class="GtkAction" id="menu_cal_action">
-    <property name="label">today_text</property>
-    <property name="stock_id">gtk-info</property>
-    <signal name="activate" handler="on_menu_cal_click" swapped="no"/>
-  </object>
-  <object class="GtkImage" id="menu_app_image">
-    <property name="visible">True</property>
-    <property name="can_focus">False</property>
-    <property name="icon_name">acal</property>
-  </object>
-  <object class="GtkImage" id="menu_exit_image">
-    <property name="visible">True</property>
-    <property name="can_focus">False</property>
-    <property name="stock">gtk-quit</property>
-    <property name="icon-size">1</property>
-  </object>
+  <requires lib="gtk+" version="3.10"/>
   <object class="GtkMenu" id="tray_menu">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
     <child>
-      <object class="GtkImageMenuItem" id="menu_app">
-        <property name="label" translatable="yes">Acal</property>
-        <property name="use_action_appearance">False</property>
+      <object class="GtkMenuItem" id="menu_cal">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
-        <property name="image">menu_app_image</property>
-        <property name="use_stock">False</property>
+        <property name="label">today_text</property>
+        <property name="use_underline">True</property>
+        <signal name="activate" handler="on_menu_cal_click" swapped="no"/>
+      </object>
+    </child>
+    <child>
+      <object class="GtkMenuItem" id="menu_app">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="label" translatable="yes">Acal</property>
         <signal name="activate" handler="on_menu_app_click" object="window" swapped="no"/>
       </object>
     </child>
     <child>
-      <object class="GtkImageMenuItem" id="menu_exit">
-        <property name="label" translatable="yes">Quit</property>
-        <property name="use_action_appearance">False</property>
+      <object class="GtkMenuItem" id="menu_exit">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
-        <property name="image">menu_exit_image</property>
-        <property name="use_stock">False</property>
+        <property name="label" translatable="yes">Quit</property>
         <signal name="activate" handler="gtk_widget_destroy" object="window" swapped="yes"/>
       </object>
     </child>
