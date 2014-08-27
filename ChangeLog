@@ -1,11 +1,286 @@
+commit 201cb350fb6a83cc320ddd43fa03c7d0aa9a6837
+Author: AhmadHamzeei <ahmadhamzeei@gmail.com>
+Date:   Wed Aug 27 12:47:10 2014 +0430
+
+    ver 0.2
+
+ INSTALL                                            |  12 +-
+ README                                             |   6 +-
+ configure.ac                                       |   7 +-
+ data/256x256/acal-dark-1.png                       | Bin 0 -> 4705 bytes
+ data/256x256/acal-dark-10.png                      | Bin 0 -> 4871 bytes
+ data/256x256/acal-dark-11.png                      | Bin 0 -> 6688 bytes
+ data/256x256/acal-dark-12.png                      | Bin 0 -> 8075 bytes
+ data/256x256/acal-dark-13.png                      | Bin 0 -> 8302 bytes
+ data/256x256/acal-dark-14.png                      | Bin 0 -> 8476 bytes
+ data/256x256/acal-dark-15.png                      | Bin 0 -> 10122 bytes
+ data/256x256/acal-dark-16.png                      | Bin 0 -> 8571 bytes
+ data/256x256/acal-dark-17.png                      | Bin 0 -> 8868 bytes
+ data/256x256/acal-dark-18.png                      | Bin 0 -> 8822 bytes
+ data/256x256/acal-dark-19.png                      | Bin 0 -> 8899 bytes
+ data/256x256/acal-dark-2.png                       | Bin 0 -> 6070 bytes
+ data/256x256/acal-dark-20.png                      | Bin 0 -> 6155 bytes
+ data/256x256/acal-dark-21.png                      | Bin 0 -> 7927 bytes
+ data/256x256/acal-dark-22.png                      | Bin 0 -> 9234 bytes
+ data/256x256/acal-dark-23.png                      | Bin 0 -> 9462 bytes
+ data/256x256/acal-dark-24.png                      | Bin 0 -> 9540 bytes
+ data/256x256/acal-dark-25.png                      | Bin 0 -> 11366 bytes
+ data/256x256/acal-dark-26.png                      | Bin 0 -> 9719 bytes
+ data/256x256/acal-dark-27.png                      | Bin 0 -> 10030 bytes
+ data/256x256/acal-dark-28.png                      | Bin 0 -> 10019 bytes
+ data/256x256/acal-dark-29.png                      | Bin 0 -> 10011 bytes
+ data/256x256/acal-dark-3.png                       | Bin 0 -> 6197 bytes
+ data/256x256/acal-dark-30.png                      | Bin 0 -> 6348 bytes
+ data/256x256/acal-dark-31.png                      | Bin 0 -> 8189 bytes
+ data/256x256/acal-dark-4.png                       | Bin 0 -> 6526 bytes
+ data/256x256/acal-dark-5.png                       | Bin 0 -> 8197 bytes
+ data/256x256/acal-dark-6.png                       | Bin 0 -> 6488 bytes
+ data/256x256/acal-dark-7.png                       | Bin 0 -> 6623 bytes
+ data/256x256/acal-dark-8.png                       | Bin 0 -> 6646 bytes
+ data/256x256/acal-dark-9.png                       | Bin 0 -> 6713 bytes
+ data/256x256/acal-light-1.png                      | Bin 0 -> 4669 bytes
+ data/256x256/acal-light-10.png                     | Bin 0 -> 4854 bytes
+ data/256x256/acal-light-11.png                     | Bin 0 -> 6624 bytes
+ data/256x256/acal-light-12.png                     | Bin 0 -> 7936 bytes
+ data/256x256/acal-light-13.png                     | Bin 0 -> 8218 bytes
+ data/256x256/acal-light-14.png                     | Bin 0 -> 8205 bytes
+ data/256x256/acal-light-15.png                     | Bin 0 -> 10322 bytes
+ data/256x256/acal-light-16.png                     | Bin 0 -> 8676 bytes
+ data/256x256/acal-light-17.png                     | Bin 0 -> 8847 bytes
+ data/256x256/acal-light-18.png                     | Bin 0 -> 8841 bytes
+ data/256x256/acal-light-19.png                     | Bin 0 -> 8999 bytes
+ data/256x256/acal-light-2.png                      | Bin 0 -> 5940 bytes
+ data/256x256/acal-light-20.png                     | Bin 0 -> 6145 bytes
+ data/256x256/acal-light-21.png                     | Bin 0 -> 8061 bytes
+ data/256x256/acal-light-22.png                     | Bin 0 -> 9273 bytes
+ data/256x256/acal-light-23.png                     | Bin 0 -> 9548 bytes
+ data/256x256/acal-light-24.png                     | Bin 0 -> 9560 bytes
+ data/256x256/acal-light-25.png                     | Bin 0 -> 11559 bytes
+ data/256x256/acal-light-26.png                     | Bin 0 -> 9735 bytes
+ data/256x256/acal-light-27.png                     | Bin 0 -> 10199 bytes
+ data/256x256/acal-light-28.png                     | Bin 0 -> 10204 bytes
+ data/256x256/acal-light-29.png                     | Bin 0 -> 10202 bytes
+ data/256x256/acal-light-3.png                      | Bin 0 -> 6112 bytes
+ data/256x256/acal-light-30.png                     | Bin 0 -> 6319 bytes
+ data/256x256/acal-light-31.png                     | Bin 0 -> 8137 bytes
+ data/256x256/acal-light-4.png                      | Bin 0 -> 6368 bytes
+ data/256x256/acal-light-5.png                      | Bin 0 -> 8112 bytes
+ data/256x256/acal-light-6.png                      | Bin 0 -> 6349 bytes
+ data/256x256/acal-light-7.png                      | Bin 0 -> 6797 bytes
+ data/256x256/acal-light-8.png                      | Bin 0 -> 6814 bytes
+ data/256x256/acal-light-9.png                      | Bin 0 -> 6746 bytes
+ data/Makefile.am                                   | 101 ++++--
+ data/acal.png                                      | Bin 103288 -> 87207 bytes
+ data/ir.ubuntu.acal.gschema.xml                    |  15 +
+ .../ubuntu-mono-dark/persian-calendar-1.png        | Bin 7494 -> 0 bytes
+ .../ubuntu-mono-dark/persian-calendar-10.png       | Bin 7565 -> 0 bytes
+ .../ubuntu-mono-dark/persian-calendar-11.png       | Bin 9579 -> 0 bytes
+ .../ubuntu-mono-dark/persian-calendar-12.png       | Bin 11564 -> 0 bytes
+ .../ubuntu-mono-dark/persian-calendar-13.png       | Bin 11560 -> 0 bytes
+ .../ubuntu-mono-dark/persian-calendar-14.png       | Bin 12047 -> 0 bytes
+ .../ubuntu-mono-dark/persian-calendar-15.png       | Bin 14653 -> 0 bytes
+ .../ubuntu-mono-dark/persian-calendar-16.png       | Bin 12683 -> 0 bytes
+ .../ubuntu-mono-dark/persian-calendar-17.png       | Bin 12343 -> 0 bytes
+ .../ubuntu-mono-dark/persian-calendar-18.png       | Bin 12380 -> 0 bytes
+ .../ubuntu-mono-dark/persian-calendar-19.png       | Bin 12946 -> 0 bytes
+ .../ubuntu-mono-dark/persian-calendar-2.png        | Bin 9486 -> 0 bytes
+ .../ubuntu-mono-dark/persian-calendar-20.png       | Bin 9573 -> 0 bytes
+ .../ubuntu-mono-dark/persian-calendar-21.png       | Bin 11588 -> 0 bytes
+ .../ubuntu-mono-dark/persian-calendar-22.png       | Bin 13206 -> 0 bytes
+ .../ubuntu-mono-dark/persian-calendar-23.png       | Bin 13305 -> 0 bytes
+ .../ubuntu-mono-dark/persian-calendar-24.png       | Bin 13887 -> 0 bytes
+ .../ubuntu-mono-dark/persian-calendar-25.png       | Bin 16581 -> 0 bytes
+ .../ubuntu-mono-dark/persian-calendar-26.png       | Bin 14507 -> 0 bytes
+ .../ubuntu-mono-dark/persian-calendar-27.png       | Bin 14222 -> 0 bytes
+ .../ubuntu-mono-dark/persian-calendar-28.png       | Bin 14321 -> 0 bytes
+ .../ubuntu-mono-dark/persian-calendar-29.png       | Bin 14819 -> 0 bytes
+ .../ubuntu-mono-dark/persian-calendar-3.png        | Bin 9438 -> 0 bytes
+ .../ubuntu-mono-dark/persian-calendar-30.png       | Bin 9530 -> 0 bytes
+ .../ubuntu-mono-dark/persian-calendar-31.png       | Bin 11555 -> 0 bytes
+ .../ubuntu-mono-dark/persian-calendar-4.png        | Bin 9857 -> 0 bytes
+ .../ubuntu-mono-dark/persian-calendar-5.png        | Bin 12410 -> 0 bytes
+ .../ubuntu-mono-dark/persian-calendar-6.png        | Bin 10118 -> 0 bytes
+ .../ubuntu-mono-dark/persian-calendar-7.png        | Bin 10098 -> 0 bytes
+ .../ubuntu-mono-dark/persian-calendar-8.png        | Bin 10164 -> 0 bytes
+ .../ubuntu-mono-dark/persian-calendar-9.png        | Bin 10498 -> 0 bytes
+ po/fa.po                                           | 125 ++++---
+ src/acal.c                                         | 216 ++++++++----
+ src/resources/calendar.glade                       | 390 ++++++++++++++++++++-
+ 102 files changed, 705 insertions(+), 167 deletions(-)
+
+commit 4f877ddbe714c2e72976c09bc914bc49200b0b71
+Author: AhmadHamzeei <ahmadhamzeei@gmail.com>
+Date:   Mon Aug 18 13:20:28 2014 +0430
+
+    GtkImageMenuItem & GtkAction deprecated
+
+ src/acal.c                   | 29 ++++++++++++-----------------
+ src/resources/calendar.glade | 42 +++++++++++++++---------------------------
+ 2 files changed, 27 insertions(+), 44 deletions(-)
+
+commit 7aac8b9d3fdaeb4b04051515e27019f7a1cf00d0
+Author: AhmadHamzeei <ahmadhamzeei@gmail.com>
+Date:   Fri Aug 8 13:33:20 2014 +0430
+
+    hardcode colors
+
+ src/acal.c | 10 +++++++---
+ 1 file changed, 7 insertions(+), 3 deletions(-)
+
+commit 4c937e2f0283c242377c234cfd8e8e6c17f885d1
+Author: AhmadHamzeei <ahmadhamzeei@gmail.com>
+Date:   Mon Aug 4 22:10:58 2014 +0430
+
+    delete previous files
+
+ .gitignore                                        |   23 -
+ LICENSE                                           |  674 -------------
+ Makefile                                          |   11 -
+ README.md                                         |   23 -
+ calendar.c                                        |  325 -------
+ calendar.glade                                    | 1070 ---------------------
+ pixmaps/README                                    |    3 -
+ pixmaps/acal.png                                  |  Bin 115130 -> 0 bytes
+ pixmaps/calendar.svg                              |  429 ---------
+ pixmaps/ubuntu-mono-dark/persian-calendar-1.png   |  Bin 7494 -> 0 bytes
+ pixmaps/ubuntu-mono-dark/persian-calendar-10.png  |  Bin 7565 -> 0 bytes
+ pixmaps/ubuntu-mono-dark/persian-calendar-11.png  |  Bin 9579 -> 0 bytes
+ pixmaps/ubuntu-mono-dark/persian-calendar-12.png  |  Bin 11564 -> 0 bytes
+ pixmaps/ubuntu-mono-dark/persian-calendar-13.png  |  Bin 11560 -> 0 bytes
+ pixmaps/ubuntu-mono-dark/persian-calendar-14.png  |  Bin 12047 -> 0 bytes
+ pixmaps/ubuntu-mono-dark/persian-calendar-15.png  |  Bin 14653 -> 0 bytes
+ pixmaps/ubuntu-mono-dark/persian-calendar-16.png  |  Bin 12683 -> 0 bytes
+ pixmaps/ubuntu-mono-dark/persian-calendar-17.png  |  Bin 12343 -> 0 bytes
+ pixmaps/ubuntu-mono-dark/persian-calendar-18.png  |  Bin 12380 -> 0 bytes
+ pixmaps/ubuntu-mono-dark/persian-calendar-19.png  |  Bin 12946 -> 0 bytes
+ pixmaps/ubuntu-mono-dark/persian-calendar-2.png   |  Bin 9486 -> 0 bytes
+ pixmaps/ubuntu-mono-dark/persian-calendar-20.png  |  Bin 9573 -> 0 bytes
+ pixmaps/ubuntu-mono-dark/persian-calendar-21.png  |  Bin 11588 -> 0 bytes
+ pixmaps/ubuntu-mono-dark/persian-calendar-22.png  |  Bin 13206 -> 0 bytes
+ pixmaps/ubuntu-mono-dark/persian-calendar-23.png  |  Bin 9493 -> 0 bytes
+ pixmaps/ubuntu-mono-dark/persian-calendar-24.png  |  Bin 9505 -> 0 bytes
+ pixmaps/ubuntu-mono-dark/persian-calendar-25.png  |  Bin 16581 -> 0 bytes
+ pixmaps/ubuntu-mono-dark/persian-calendar-26.png  |  Bin 14507 -> 0 bytes
+ pixmaps/ubuntu-mono-dark/persian-calendar-27.png  |  Bin 14222 -> 0 bytes
+ pixmaps/ubuntu-mono-dark/persian-calendar-28.png  |  Bin 14321 -> 0 bytes
+ pixmaps/ubuntu-mono-dark/persian-calendar-29.png  |  Bin 14819 -> 0 bytes
+ pixmaps/ubuntu-mono-dark/persian-calendar-3.png   |  Bin 9438 -> 0 bytes
+ pixmaps/ubuntu-mono-dark/persian-calendar-30.png  |  Bin 9530 -> 0 bytes
+ pixmaps/ubuntu-mono-dark/persian-calendar-31.png  |  Bin 11555 -> 0 bytes
+ pixmaps/ubuntu-mono-dark/persian-calendar-4.png   |  Bin 9857 -> 0 bytes
+ pixmaps/ubuntu-mono-dark/persian-calendar-5.png   |  Bin 12410 -> 0 bytes
+ pixmaps/ubuntu-mono-dark/persian-calendar-6.png   |  Bin 10118 -> 0 bytes
+ pixmaps/ubuntu-mono-dark/persian-calendar-7.png   |  Bin 10098 -> 0 bytes
+ pixmaps/ubuntu-mono-dark/persian-calendar-8.png   |  Bin 10164 -> 0 bytes
+ pixmaps/ubuntu-mono-dark/persian-calendar-9.png   |  Bin 10498 -> 0 bytes
+ pixmaps/ubuntu-mono-light/persian-calendar-1.png  |  Bin 7926 -> 0 bytes
+ pixmaps/ubuntu-mono-light/persian-calendar-10.png |  Bin 7984 -> 0 bytes
+ pixmaps/ubuntu-mono-light/persian-calendar-11.png |  Bin 10071 -> 0 bytes
+ pixmaps/ubuntu-mono-light/persian-calendar-12.png |  Bin 12073 -> 0 bytes
+ pixmaps/ubuntu-mono-light/persian-calendar-13.png |  Bin 12134 -> 0 bytes
+ pixmaps/ubuntu-mono-light/persian-calendar-14.png |  Bin 12526 -> 0 bytes
+ pixmaps/ubuntu-mono-light/persian-calendar-15.png |  Bin 15191 -> 0 bytes
+ pixmaps/ubuntu-mono-light/persian-calendar-16.png |  Bin 13113 -> 0 bytes
+ pixmaps/ubuntu-mono-light/persian-calendar-17.png |  Bin 12827 -> 0 bytes
+ pixmaps/ubuntu-mono-light/persian-calendar-18.png |  Bin 12927 -> 0 bytes
+ pixmaps/ubuntu-mono-light/persian-calendar-19.png |  Bin 13450 -> 0 bytes
+ pixmaps/ubuntu-mono-light/persian-calendar-2.png  |  Bin 9975 -> 0 bytes
+ pixmaps/ubuntu-mono-light/persian-calendar-20.png |  Bin 10060 -> 0 bytes
+ pixmaps/ubuntu-mono-light/persian-calendar-21.png |  Bin 12096 -> 0 bytes
+ pixmaps/ubuntu-mono-light/persian-calendar-22.png |  Bin 13792 -> 0 bytes
+ pixmaps/ubuntu-mono-light/persian-calendar-23.png |  Bin 13893 -> 0 bytes
+ pixmaps/ubuntu-mono-light/persian-calendar-24.png |  Bin 14431 -> 0 bytes
+ pixmaps/ubuntu-mono-light/persian-calendar-25.png |  Bin 17171 -> 0 bytes
+ pixmaps/ubuntu-mono-light/persian-calendar-26.png |  Bin 15014 -> 0 bytes
+ pixmaps/ubuntu-mono-light/persian-calendar-27.png |  Bin 14787 -> 0 bytes
+ pixmaps/ubuntu-mono-light/persian-calendar-28.png |  Bin 14948 -> 0 bytes
+ pixmaps/ubuntu-mono-light/persian-calendar-29.png |  Bin 15435 -> 0 bytes
+ pixmaps/ubuntu-mono-light/persian-calendar-3.png  |  Bin 9920 -> 0 bytes
+ pixmaps/ubuntu-mono-light/persian-calendar-30.png |  Bin 10016 -> 0 bytes
+ pixmaps/ubuntu-mono-light/persian-calendar-31.png |  Bin 12108 -> 0 bytes
+ pixmaps/ubuntu-mono-light/persian-calendar-4.png  |  Bin 10323 -> 0 bytes
+ pixmaps/ubuntu-mono-light/persian-calendar-5.png  |  Bin 12979 -> 0 bytes
+ pixmaps/ubuntu-mono-light/persian-calendar-6.png  |  Bin 10556 -> 0 bytes
+ pixmaps/ubuntu-mono-light/persian-calendar-7.png  |  Bin 10535 -> 0 bytes
+ pixmaps/ubuntu-mono-light/persian-calendar-8.png  |  Bin 10683 -> 0 bytes
+ pixmaps/ubuntu-mono-light/persian-calendar-9.png  |  Bin 10939 -> 0 bytes
+ 71 files changed, 2558 deletions(-)
+
+commit 9f51c1d51c47b9d4053d7a254ce4fb88ebe74e08
+Author: AhmadHamzeei <ahmadhamzeei@gmail.com>
+Date:   Mon Aug 4 22:03:37 2014 +0430
+
+    migration to autotools
+
+ AUTHORS                                            |    2 +
+ COPYING                                            |  674 ++++++++++++
+ ChangeLog                                          |  232 +++++
+ INSTALL                                            |  370 +++++++
+ Makefile.am                                        |   22 +
+ NEWS                                               |    1 +
+ README                                             |   16 +
+ autogen.sh                                         |    7 +
+ configure.ac                                       |   44 +
+ data/16x16/apps/acal.png                           |  Bin 0 -> 529 bytes
+ data/22x22/apps/acal.png                           |  Bin 0 -> 745 bytes
+ data/24x24/apps/acal.png                           |  Bin 0 -> 818 bytes
+ data/32x32/apps/acal.png                           |  Bin 0 -> 1082 bytes
+ data/48x48/apps/acal.png                           |  Bin 0 -> 1646 bytes
+ data/Makefile.am                                   |   78 ++
+ data/acal.desktop.in                               |   12 +
+ data/acal.png                                      |  Bin 0 -> 103288 bytes
+ .../ubuntu-mono-dark/persian-calendar-1.png        |  Bin 0 -> 7494 bytes
+ .../ubuntu-mono-dark/persian-calendar-10.png       |  Bin 0 -> 7565 bytes
+ .../ubuntu-mono-dark/persian-calendar-11.png       |  Bin 0 -> 9579 bytes
+ .../ubuntu-mono-dark/persian-calendar-12.png       |  Bin 0 -> 11564 bytes
+ .../ubuntu-mono-dark/persian-calendar-13.png       |  Bin 0 -> 11560 bytes
+ .../ubuntu-mono-dark/persian-calendar-14.png       |  Bin 0 -> 12047 bytes
+ .../ubuntu-mono-dark/persian-calendar-15.png       |  Bin 0 -> 14653 bytes
+ .../ubuntu-mono-dark/persian-calendar-16.png       |  Bin 0 -> 12683 bytes
+ .../ubuntu-mono-dark/persian-calendar-17.png       |  Bin 0 -> 12343 bytes
+ .../ubuntu-mono-dark/persian-calendar-18.png       |  Bin 0 -> 12380 bytes
+ .../ubuntu-mono-dark/persian-calendar-19.png       |  Bin 0 -> 12946 bytes
+ .../ubuntu-mono-dark/persian-calendar-2.png        |  Bin 0 -> 9486 bytes
+ .../ubuntu-mono-dark/persian-calendar-20.png       |  Bin 0 -> 9573 bytes
+ .../ubuntu-mono-dark/persian-calendar-21.png       |  Bin 0 -> 11588 bytes
+ .../ubuntu-mono-dark/persian-calendar-22.png       |  Bin 0 -> 13206 bytes
+ .../ubuntu-mono-dark/persian-calendar-23.png       |  Bin 0 -> 13305 bytes
+ .../ubuntu-mono-dark/persian-calendar-24.png       |  Bin 0 -> 13887 bytes
+ .../ubuntu-mono-dark/persian-calendar-25.png       |  Bin 0 -> 16581 bytes
+ .../ubuntu-mono-dark/persian-calendar-26.png       |  Bin 0 -> 14507 bytes
+ .../ubuntu-mono-dark/persian-calendar-27.png       |  Bin 0 -> 14222 bytes
+ .../ubuntu-mono-dark/persian-calendar-28.png       |  Bin 0 -> 14321 bytes
+ .../ubuntu-mono-dark/persian-calendar-29.png       |  Bin 0 -> 14819 bytes
+ .../ubuntu-mono-dark/persian-calendar-3.png        |  Bin 0 -> 9438 bytes
+ .../ubuntu-mono-dark/persian-calendar-30.png       |  Bin 0 -> 9530 bytes
+ .../ubuntu-mono-dark/persian-calendar-31.png       |  Bin 0 -> 11555 bytes
+ .../ubuntu-mono-dark/persian-calendar-4.png        |  Bin 0 -> 9857 bytes
+ .../ubuntu-mono-dark/persian-calendar-5.png        |  Bin 0 -> 12410 bytes
+ .../ubuntu-mono-dark/persian-calendar-6.png        |  Bin 0 -> 10118 bytes
+ .../ubuntu-mono-dark/persian-calendar-7.png        |  Bin 0 -> 10098 bytes
+ .../ubuntu-mono-dark/persian-calendar-8.png        |  Bin 0 -> 10164 bytes
+ .../ubuntu-mono-dark/persian-calendar-9.png        |  Bin 0 -> 10498 bytes
+ data/scalable/apps/acal.svg                        |  429 ++++++++
+ git.mk                                             |  318 ++++++
+ po/LINGUAS                                         |    3 +
+ po/Makevars                                        |   41 +
+ po/POTFILES.in                                     |    7 +
+ po/fa.po                                           |  192 ++++
+ po/stamp-po                                        |    1 +
+ src/Makefile.am                                    |   40 +
+ src/acal.c                                         |  393 +++++++
+ src/acal.gresource.xml                             |    7 +
+ src/resources/calendar.glade                       | 1097 ++++++++++++++++++++
+ 59 files changed, 3986 insertions(+)
+
 commit 3153006900e196a8541035bb19c2782cac0f2095
 Author: AhmadHamzeei <ahmadhamzeei@gmail.com>
 Date:   Mon Jul 14 15:17:38 2014 +0430
 
     resize pngs to fix tray icon
 
- pixmaps/ubuntu-mono-dark/persian-calendar-23.png |  Bin 13305 -> 9493 bytes
- pixmaps/ubuntu-mono-dark/persian-calendar-24.png |  Bin 13887 -> 9505 bytes
+ pixmaps/ubuntu-mono-dark/persian-calendar-23.png | Bin 13305 -> 9493 bytes
+ pixmaps/ubuntu-mono-dark/persian-calendar-24.png | Bin 13887 -> 9505 bytes
  2 files changed, 0 insertions(+), 0 deletions(-)
 
 commit 70dae9592bc43b54b8ef0bb262e864af2b4d0308
@@ -14,7 +289,7 @@ Date:   Mon Jul 14 15:16:34 2014 +0430
 
     do not show main window at start
 
- calendar.glade |    1 -
+ calendar.glade | 1 -
  1 file changed, 1 deletion(-)
 
 commit fcee4fd7b70d8d314974ed192ccfe9f11c94e42f
@@ -23,8 +298,8 @@ Date:   Sat Jul 12 19:04:18 2014 +0430
 
     update readme
 
- README.md        |   15 ++++++++++++---
- pixmaps/acal.png |  Bin 14207 -> 115130 bytes
+ README.md        |  15 ++++++++++++---
+ pixmaps/acal.png | Bin 14207 -> 115130 bytes
  2 files changed, 12 insertions(+), 3 deletions(-)
 
 commit e9e6447550469289097b36f31fc429d68cedeba1
@@ -33,8 +308,8 @@ Date:   Sat Jul 12 18:38:19 2014 +0430
 
     add tray icon
 
- calendar.c     |   71 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
- calendar.glade |   14 +++++++++--
+ calendar.c     | 71 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ calendar.glade | 14 ++++++++++--
  2 files changed, 83 insertions(+), 2 deletions(-)
 
 commit 18c1f9fe778ca1b3b6eb2e50e70b1ccf08449424
@@ -43,69 +318,69 @@ Date:   Sat Jul 12 18:37:14 2014 +0430
 
     add icons
 
- pixmaps/README                                    |    3 +++
- pixmaps/ubuntu-mono-dark/persian-calendar-1.png   |  Bin 0 -> 7494 bytes
- pixmaps/ubuntu-mono-dark/persian-calendar-10.png  |  Bin 0 -> 7565 bytes
- pixmaps/ubuntu-mono-dark/persian-calendar-11.png  |  Bin 0 -> 9579 bytes
- pixmaps/ubuntu-mono-dark/persian-calendar-12.png  |  Bin 0 -> 11564 bytes
- pixmaps/ubuntu-mono-dark/persian-calendar-13.png  |  Bin 0 -> 11560 bytes
- pixmaps/ubuntu-mono-dark/persian-calendar-14.png  |  Bin 0 -> 12047 bytes
- pixmaps/ubuntu-mono-dark/persian-calendar-15.png  |  Bin 0 -> 14653 bytes
- pixmaps/ubuntu-mono-dark/persian-calendar-16.png  |  Bin 0 -> 12683 bytes
- pixmaps/ubuntu-mono-dark/persian-calendar-17.png  |  Bin 0 -> 12343 bytes
- pixmaps/ubuntu-mono-dark/persian-calendar-18.png  |  Bin 0 -> 12380 bytes
- pixmaps/ubuntu-mono-dark/persian-calendar-19.png  |  Bin 0 -> 12946 bytes
- pixmaps/ubuntu-mono-dark/persian-calendar-2.png   |  Bin 0 -> 9486 bytes
- pixmaps/ubuntu-mono-dark/persian-calendar-20.png  |  Bin 0 -> 9573 bytes
- pixmaps/ubuntu-mono-dark/persian-calendar-21.png  |  Bin 0 -> 11588 bytes
- pixmaps/ubuntu-mono-dark/persian-calendar-22.png  |  Bin 0 -> 13206 bytes
- pixmaps/ubuntu-mono-dark/persian-calendar-23.png  |  Bin 0 -> 13305 bytes
- pixmaps/ubuntu-mono-dark/persian-calendar-24.png  |  Bin 0 -> 13887 bytes
- pixmaps/ubuntu-mono-dark/persian-calendar-25.png  |  Bin 0 -> 16581 bytes
- pixmaps/ubuntu-mono-dark/persian-calendar-26.png  |  Bin 0 -> 14507 bytes
- pixmaps/ubuntu-mono-dark/persian-calendar-27.png  |  Bin 0 -> 14222 bytes
- pixmaps/ubuntu-mono-dark/persian-calendar-28.png  |  Bin 0 -> 14321 bytes
- pixmaps/ubuntu-mono-dark/persian-calendar-29.png  |  Bin 0 -> 14819 bytes
- pixmaps/ubuntu-mono-dark/persian-calendar-3.png   |  Bin 0 -> 9438 bytes
- pixmaps/ubuntu-mono-dark/persian-calendar-30.png  |  Bin 0 -> 9530 bytes
- pixmaps/ubuntu-mono-dark/persian-calendar-31.png  |  Bin 0 -> 11555 bytes
- pixmaps/ubuntu-mono-dark/persian-calendar-4.png   |  Bin 0 -> 9857 bytes
- pixmaps/ubuntu-mono-dark/persian-calendar-5.png   |  Bin 0 -> 12410 bytes
- pixmaps/ubuntu-mono-dark/persian-calendar-6.png   |  Bin 0 -> 10118 bytes
- pixmaps/ubuntu-mono-dark/persian-calendar-7.png   |  Bin 0 -> 10098 bytes
- pixmaps/ubuntu-mono-dark/persian-calendar-8.png   |  Bin 0 -> 10164 bytes
- pixmaps/ubuntu-mono-dark/persian-calendar-9.png   |  Bin 0 -> 10498 bytes
- pixmaps/ubuntu-mono-light/persian-calendar-1.png  |  Bin 0 -> 7926 bytes
- pixmaps/ubuntu-mono-light/persian-calendar-10.png |  Bin 0 -> 7984 bytes
- pixmaps/ubuntu-mono-light/persian-calendar-11.png |  Bin 0 -> 10071 bytes
- pixmaps/ubuntu-mono-light/persian-calendar-12.png |  Bin 0 -> 12073 bytes
- pixmaps/ubuntu-mono-light/persian-calendar-13.png |  Bin 0 -> 12134 bytes
- pixmaps/ubuntu-mono-light/persian-calendar-14.png |  Bin 0 -> 12526 bytes
- pixmaps/ubuntu-mono-light/persian-calendar-15.png |  Bin 0 -> 15191 bytes
- pixmaps/ubuntu-mono-light/persian-calendar-16.png |  Bin 0 -> 13113 bytes
- pixmaps/ubuntu-mono-light/persian-calendar-17.png |  Bin 0 -> 12827 bytes
- pixmaps/ubuntu-mono-light/persian-calendar-18.png |  Bin 0 -> 12927 bytes
- pixmaps/ubuntu-mono-light/persian-calendar-19.png |  Bin 0 -> 13450 bytes
- pixmaps/ubuntu-mono-light/persian-calendar-2.png  |  Bin 0 -> 9975 bytes
- pixmaps/ubuntu-mono-light/persian-calendar-20.png |  Bin 0 -> 10060 bytes
- pixmaps/ubuntu-mono-light/persian-calendar-21.png |  Bin 0 -> 12096 bytes
- pixmaps/ubuntu-mono-light/persian-calendar-22.png |  Bin 0 -> 13792 bytes
- pixmaps/ubuntu-mono-light/persian-calendar-23.png |  Bin 0 -> 13893 bytes
- pixmaps/ubuntu-mono-light/persian-calendar-24.png |  Bin 0 -> 14431 bytes
- pixmaps/ubuntu-mono-light/persian-calendar-25.png |  Bin 0 -> 17171 bytes
- pixmaps/ubuntu-mono-light/persian-calendar-26.png |  Bin 0 -> 15014 bytes
- pixmaps/ubuntu-mono-light/persian-calendar-27.png |  Bin 0 -> 14787 bytes
- pixmaps/ubuntu-mono-light/persian-calendar-28.png |  Bin 0 -> 14948 bytes
- pixmaps/ubuntu-mono-light/persian-calendar-29.png |  Bin 0 -> 15435 bytes
- pixmaps/ubuntu-mono-light/persian-calendar-3.png  |  Bin 0 -> 9920 bytes
- pixmaps/ubuntu-mono-light/persian-calendar-30.png |  Bin 0 -> 10016 bytes
- pixmaps/ubuntu-mono-light/persian-calendar-31.png |  Bin 0 -> 12108 bytes
- pixmaps/ubuntu-mono-light/persian-calendar-4.png  |  Bin 0 -> 10323 bytes
- pixmaps/ubuntu-mono-light/persian-calendar-5.png  |  Bin 0 -> 12979 bytes
- pixmaps/ubuntu-mono-light/persian-calendar-6.png  |  Bin 0 -> 10556 bytes
- pixmaps/ubuntu-mono-light/persian-calendar-7.png  |  Bin 0 -> 10535 bytes
- pixmaps/ubuntu-mono-light/persian-calendar-8.png  |  Bin 0 -> 10683 bytes
- pixmaps/ubuntu-mono-light/persian-calendar-9.png  |  Bin 0 -> 10939 bytes
+ pixmaps/README                                    |   3 +++
+ pixmaps/ubuntu-mono-dark/persian-calendar-1.png   | Bin 0 -> 7494 bytes
+ pixmaps/ubuntu-mono-dark/persian-calendar-10.png  | Bin 0 -> 7565 bytes
+ pixmaps/ubuntu-mono-dark/persian-calendar-11.png  | Bin 0 -> 9579 bytes
+ pixmaps/ubuntu-mono-dark/persian-calendar-12.png  | Bin 0 -> 11564 bytes
+ pixmaps/ubuntu-mono-dark/persian-calendar-13.png  | Bin 0 -> 11560 bytes
+ pixmaps/ubuntu-mono-dark/persian-calendar-14.png  | Bin 0 -> 12047 bytes
+ pixmaps/ubuntu-mono-dark/persian-calendar-15.png  | Bin 0 -> 14653 bytes
+ pixmaps/ubuntu-mono-dark/persian-calendar-16.png  | Bin 0 -> 12683 bytes
+ pixmaps/ubuntu-mono-dark/persian-calendar-17.png  | Bin 0 -> 12343 bytes
+ pixmaps/ubuntu-mono-dark/persian-calendar-18.png  | Bin 0 -> 12380 bytes
+ pixmaps/ubuntu-mono-dark/persian-calendar-19.png  | Bin 0 -> 12946 bytes
+ pixmaps/ubuntu-mono-dark/persian-calendar-2.png   | Bin 0 -> 9486 bytes
+ pixmaps/ubuntu-mono-dark/persian-calendar-20.png  | Bin 0 -> 9573 bytes
+ pixmaps/ubuntu-mono-dark/persian-calendar-21.png  | Bin 0 -> 11588 bytes
+ pixmaps/ubuntu-mono-dark/persian-calendar-22.png  | Bin 0 -> 13206 bytes
+ pixmaps/ubuntu-mono-dark/persian-calendar-23.png  | Bin 0 -> 13305 bytes
+ pixmaps/ubuntu-mono-dark/persian-calendar-24.png  | Bin 0 -> 13887 bytes
+ pixmaps/ubuntu-mono-dark/persian-calendar-25.png  | Bin 0 -> 16581 bytes
+ pixmaps/ubuntu-mono-dark/persian-calendar-26.png  | Bin 0 -> 14507 bytes
+ pixmaps/ubuntu-mono-dark/persian-calendar-27.png  | Bin 0 -> 14222 bytes
+ pixmaps/ubuntu-mono-dark/persian-calendar-28.png  | Bin 0 -> 14321 bytes
+ pixmaps/ubuntu-mono-dark/persian-calendar-29.png  | Bin 0 -> 14819 bytes
+ pixmaps/ubuntu-mono-dark/persian-calendar-3.png   | Bin 0 -> 9438 bytes
+ pixmaps/ubuntu-mono-dark/persian-calendar-30.png  | Bin 0 -> 9530 bytes
+ pixmaps/ubuntu-mono-dark/persian-calendar-31.png  | Bin 0 -> 11555 bytes
+ pixmaps/ubuntu-mono-dark/persian-calendar-4.png   | Bin 0 -> 9857 bytes
+ pixmaps/ubuntu-mono-dark/persian-calendar-5.png   | Bin 0 -> 12410 bytes
+ pixmaps/ubuntu-mono-dark/persian-calendar-6.png   | Bin 0 -> 10118 bytes
+ pixmaps/ubuntu-mono-dark/persian-calendar-7.png   | Bin 0 -> 10098 bytes
+ pixmaps/ubuntu-mono-dark/persian-calendar-8.png   | Bin 0 -> 10164 bytes
+ pixmaps/ubuntu-mono-dark/persian-calendar-9.png   | Bin 0 -> 10498 bytes
+ pixmaps/ubuntu-mono-light/persian-calendar-1.png  | Bin 0 -> 7926 bytes
+ pixmaps/ubuntu-mono-light/persian-calendar-10.png | Bin 0 -> 7984 bytes
+ pixmaps/ubuntu-mono-light/persian-calendar-11.png | Bin 0 -> 10071 bytes
+ pixmaps/ubuntu-mono-light/persian-calendar-12.png | Bin 0 -> 12073 bytes
+ pixmaps/ubuntu-mono-light/persian-calendar-13.png | Bin 0 -> 12134 bytes
+ pixmaps/ubuntu-mono-light/persian-calendar-14.png | Bin 0 -> 12526 bytes
+ pixmaps/ubuntu-mono-light/persian-calendar-15.png | Bin 0 -> 15191 bytes
+ pixmaps/ubuntu-mono-light/persian-calendar-16.png | Bin 0 -> 13113 bytes
+ pixmaps/ubuntu-mono-light/persian-calendar-17.png | Bin 0 -> 12827 bytes
+ pixmaps/ubuntu-mono-light/persian-calendar-18.png | Bin 0 -> 12927 bytes
+ pixmaps/ubuntu-mono-light/persian-calendar-19.png | Bin 0 -> 13450 bytes
+ pixmaps/ubuntu-mono-light/persian-calendar-2.png  | Bin 0 -> 9975 bytes
+ pixmaps/ubuntu-mono-light/persian-calendar-20.png | Bin 0 -> 10060 bytes
+ pixmaps/ubuntu-mono-light/persian-calendar-21.png | Bin 0 -> 12096 bytes
+ pixmaps/ubuntu-mono-light/persian-calendar-22.png | Bin 0 -> 13792 bytes
+ pixmaps/ubuntu-mono-light/persian-calendar-23.png | Bin 0 -> 13893 bytes
+ pixmaps/ubuntu-mono-light/persian-calendar-24.png | Bin 0 -> 14431 bytes
+ pixmaps/ubuntu-mono-light/persian-calendar-25.png | Bin 0 -> 17171 bytes
+ pixmaps/ubuntu-mono-light/persian-calendar-26.png | Bin 0 -> 15014 bytes
+ pixmaps/ubuntu-mono-light/persian-calendar-27.png | Bin 0 -> 14787 bytes
+ pixmaps/ubuntu-mono-light/persian-calendar-28.png | Bin 0 -> 14948 bytes
+ pixmaps/ubuntu-mono-light/persian-calendar-29.png | Bin 0 -> 15435 bytes
+ pixmaps/ubuntu-mono-light/persian-calendar-3.png  | Bin 0 -> 9920 bytes
+ pixmaps/ubuntu-mono-light/persian-calendar-30.png | Bin 0 -> 10016 bytes
+ pixmaps/ubuntu-mono-light/persian-calendar-31.png | Bin 0 -> 12108 bytes
+ pixmaps/ubuntu-mono-light/persian-calendar-4.png  | Bin 0 -> 10323 bytes
+ pixmaps/ubuntu-mono-light/persian-calendar-5.png  | Bin 0 -> 12979 bytes
+ pixmaps/ubuntu-mono-light/persian-calendar-6.png  | Bin 0 -> 10556 bytes
+ pixmaps/ubuntu-mono-light/persian-calendar-7.png  | Bin 0 -> 10535 bytes
+ pixmaps/ubuntu-mono-light/persian-calendar-8.png  | Bin 0 -> 10683 bytes
+ pixmaps/ubuntu-mono-light/persian-calendar-9.png  | Bin 0 -> 10939 bytes
  63 files changed, 3 insertions(+)
 
 commit a8d9ebc95640cdf0b6d80ab4e3e4a946b8dd1cfd
@@ -114,7 +389,7 @@ Date:   Thu Jul 10 19:01:00 2014 +0430
 
     connect eventbox signals
 
- calendar.glade |   42 ++++++++++++++++++++++++++++++++++++++++++
+ calendar.glade | 42 ++++++++++++++++++++++++++++++++++++++++++
  1 file changed, 42 insertions(+)
 
 commit 303853ab97341e67e67b8cf3b52239473f4f7fc6
@@ -123,7 +398,7 @@ Date:   Thu Jul 10 19:00:37 2014 +0430
 
     add eventbox click function
 
- calendar.c |   54 +++++++++++++++++++++++++++++++++++++++++++++---------
+ calendar.c | 54 +++++++++++++++++++++++++++++++++++++++++++++---------
  1 file changed, 45 insertions(+), 9 deletions(-)
 
 commit ca40d4e434703711174172d4b2df402657a620c6
@@ -132,8 +407,8 @@ Date:   Thu Jul 10 14:57:55 2014 +0430
 
     add highlight function
 
- calendar.c     |   47 +++++++++++++++++++++++++++++++----------------
- calendar.glade |    1 -
+ calendar.c     | 47 +++++++++++++++++++++++++++++++----------------
+ calendar.glade |  1 -
  2 files changed, 31 insertions(+), 17 deletions(-)
 
 commit cbcf1c77c49781eb4ceed424e0943b66574343e8
@@ -142,7 +417,7 @@ Date:   Thu Jul 10 14:17:59 2014 +0430
 
     export-dynamic needed for connecting signals
 
- Makefile |    2 +-
+ Makefile | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 commit f8c7efefdf15430fdedc3d179612e08d2a217aaa
@@ -151,7 +426,7 @@ Date:   Thu Jul 10 14:17:08 2014 +0430
 
     add clear label color to clearcal function
 
- calendar.c |   37 +++++++++++++++++++------------------
+ calendar.c | 37 +++++++++++++++++++------------------
  1 file changed, 19 insertions(+), 18 deletions(-)
 
 commit 99bcbc86dc6acb9802d892b5dcf766ddea3719b2
@@ -160,7 +435,7 @@ Date:   Wed Jul 9 21:39:08 2014 +0430
 
     get color from theme, new highlight method
 
- calendar.c |   36 +++++++++++++++++++++++++++---------
+ calendar.c | 36 +++++++++++++++++++++++++++---------
  1 file changed, 27 insertions(+), 9 deletions(-)
 
 commit 11ce9416470afb80b6c31a44a30b97862504a722
@@ -169,7 +444,7 @@ Date:   Wed Jul 9 21:14:24 2014 +0430
 
     add eventbox for each label
 
- calendar.glade |  450 +++++++++++++++++++++++++++++++++++++++++++-------------
+ calendar.glade | 450 ++++++++++++++++++++++++++++++++++++++++++++-------------
  1 file changed, 351 insertions(+), 99 deletions(-)
 
 commit 4597d27929bea833bc6bf532cb8a3b288c73d46f
@@ -178,7 +453,7 @@ Date:   Mon Jul 7 23:12:01 2014 +0430
 
     remove unused hesders
 
- calendar.c |    2 --
+ calendar.c | 2 --
  1 file changed, 2 deletions(-)
 
 commit a25193ddbe17dbc28bba2a41b79ee680f9f85f24
@@ -187,7 +462,7 @@ Date:   Mon Jul 7 14:55:42 2014 +0430
 
     add screenshot
 
- pixmaps/acal.png |  Bin 0 -> 14207 bytes
+ pixmaps/acal.png | Bin 0 -> 14207 bytes
  1 file changed, 0 insertions(+), 0 deletions(-)
 
 commit d8e085cfc6c8080f45dc32c3ea192d8fc1ce450e
@@ -196,7 +471,7 @@ Date:   Mon Jul 7 13:47:37 2014 +0430
 
     new method for persian_digit function
 
- calendar.c |   18 +++++++-----------
+ calendar.c | 18 +++++++-----------
  1 file changed, 7 insertions(+), 11 deletions(-)
 
 commit 04aa91e71c94ec34e7fdc2d3edfe1b2b8207dc11
@@ -205,7 +480,7 @@ Date:   Sun Jul 6 22:56:28 2014 +0430
 
     update readme
 
- README.md |   10 ++++++++++
+ README.md | 10 ++++++++++
  1 file changed, 10 insertions(+)
 
 commit d057af344991eb4b7a3b9b7f796b9197871eac45
@@ -214,10 +489,10 @@ Date:   Sun Jul 6 22:53:40 2014 +0430
 
     add src
 
- Makefile             |   11 +
- calendar.c           |  190 +++++++++++++
- calendar.glade       |  768 ++++++++++++++++++++++++++++++++++++++++++++++++++
- pixmaps/calendar.svg |  429 ++++++++++++++++++++++++++++
+ Makefile             |  11 +
+ calendar.c           | 190 +++++++++++++
+ calendar.glade       | 768 +++++++++++++++++++++++++++++++++++++++++++++++++++
+ pixmaps/calendar.svg | 429 ++++++++++++++++++++++++++++
  4 files changed, 1398 insertions(+)
 
 commit d1c46f427159e36ccfadd19d69245b7d4bd62226
@@ -226,7 +501,7 @@ Date:   Sun Jul 6 22:45:25 2014 +0430
 
     Initial commit
 
- .gitignore |   23 +++
- LICENSE    |  674 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
- README.md  |    4 +
+ .gitignore |  23 +++
+ LICENSE    | 674 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ README.md  |   4 +
  3 files changed, 701 insertions(+)

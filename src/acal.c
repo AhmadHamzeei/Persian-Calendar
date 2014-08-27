@@ -258,26 +258,27 @@ void on_switch_icon_active_notify(GtkSwitch *widget,
 void on_switch_startup_active_notify(GtkSwitch *widget,
 				     gpointer data)
 {
-  gchar *startup_dir, *desktop_dir;
-  GFile *startup_file, *desktop_file;
+  gchar *folder_dir, *startup_dir, *desktop_dir;
+  GFile *folder_file, *startup_file, *desktop_file;
   
+  folder_dir = g_build_filename(g_get_home_dir(), ".config", "autostart", NULL);
   startup_dir = g_build_filename(g_get_home_dir(), ".config",
                                  "autostart", "acal.desktop", NULL);
   desktop_dir = g_build_filename(DATADIR, "applications", "acal.desktop", NULL);
   
+  folder_file = g_file_new_for_path(folder_dir);
   startup_file = g_file_new_for_path(startup_dir);
   desktop_file = g_file_new_for_path(desktop_dir);
   
+  /* create startup folder if not exists */
+  g_file_make_directory_with_parents(folder_file , NULL, NULL);
+  
   /* copy acal.desktop to autostart dir on activate autostart */
   if(gtk_switch_get_active(widget))
-  {
     g_file_copy(desktop_file, startup_file, G_FILE_COPY_NONE,
 		NULL, NULL, NULL, NULL);
-  }
   else
-  {
     g_file_delete(startup_file, NULL, NULL);
-  }
 }
 
 void on_about_click(GtkButton *button,
