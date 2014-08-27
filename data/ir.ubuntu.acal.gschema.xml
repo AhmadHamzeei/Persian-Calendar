@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <schema id="ir.ubuntu.acal" path="/ir/ubuntu/acal/">
+    <key name="persian-lang" type="b">
+      <default>true</default>
+      <summary>Persian language setting</summary>
+      <description>This setting defines app's main language.</description>
+    </key>
+    <key name="dark-icon" type="b">
+      <default>false</default>
+      <summary>Indicator icon setting</summary>
+      <description>This setting defines indicator's icon color.</description>
+    </key>
+  </schema>
+</schemalist>

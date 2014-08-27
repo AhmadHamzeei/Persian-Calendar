@@ -30,8 +30,10 @@
 #include <jalali.h>
 #endif
 
-/* gtkbuilder & times global variables */
+/* gtkbuilder, indicator, gsettings & times global variables */
 static GtkBuilder *builder;
+AppIndicator *indicator;
+GSettings *settings;
 struct jtm mytime, today;
 
 /* day & month names */
@@ -63,13 +65,10 @@ void highlight(GtkWidget *eventbox)
   label = child->data;
   
   /* prepare highlight colors */
-  //context = gtk_style_context_new();
-  //gtk_style_context_lookup_color(context, "selected_fg_color", &selected_fg);
-  //gtk_style_context_lookup_color(context, "selected_bg_color", &selected_bg);
-  gdk_rgba_parse(&selected_fg, "#f5f5f5");
-  gdk_rgba_parse(&selected_bg, "#7E9EBD");
-  //gtk_style_context_get_color(context, GTK_STATE_FLAG_NORMAL, &selected_fg);
-  //gtk_style_context_get_background_color(context, GTK_STATE_FLAG_NORMAL, &selected_bg);
+  context = gtk_widget_get_style_context(label);
+  gtk_style_context_get_color(context, GTK_STATE_FLAG_SELECTED, &selected_fg);
+  gtk_style_context_get_background_color(context, GTK_STATE_FLAG_SELECTED,
+					 &selected_bg);
   
   /* clearcolor previous highlighted label */
   lighted_eventbox = g_object_get_data(G_OBJECT(builder), "lighted_eventbox");
@@ -196,9 +195,142 @@ void cal_gen(void)
   g_free(setlabel);
 }
 
+void time_gen(void)
+{
+  time_t now;
+  
+  /* generate time */
+  now = time(NULL);
+  jlocaltime_r(&now, &today);
+}
+
+void update_tray(void)
+{
+  GtkMenuItem *menu_cal;
+  gchar *icon_name, *today_text;
+  
+  menu_cal = GTK_MENU_ITEM(gtk_builder_get_object(builder, "menu_cal"));
+  icon_name = g_strdup_printf("acal-%s-%d", 
+	      g_settings_get_boolean(settings, "dark-icon") ? "dark" : "light",
+              today.tm_mday);
+  
+  /* set tray icon */
+  app_indicator_set_icon_full(indicator, icon_name, icon_name);
+  g_free(icon_name);
+  
+  /* set menu_cal text */
+  today_text = g_strdup_printf("%s %s %s %s", gettext(day[today.tm_wday]),
+                               persian_digit(today.tm_mday),
+                               gettext(mon[today.tm_mon]),
+                               persian_digit(today.tm_year));
+  gtk_menu_item_set_label(menu_cal, today_text);
+  g_free(today_text);
+}
+
+gboolean check_update_tray(gpointer indicator)
+{
+  /* save previous time values & generate new time */
+  gint day = today.tm_mday, mon = today.tm_mon, year = today.tm_year;
+  time_gen();
+  
+  /* update tray if day changes */
+  if(today.tm_mday != day || today.tm_mon != mon || today.tm_year != year)
+    update_tray();
+
+  return G_SOURCE_CONTINUE;
+}
+
+void on_switch_language_active_notify(GtkSwitch *widget,
+                                      gpointer data)
+{
+  g_settings_set_boolean(settings, "persian-lang", 
+                         gtk_switch_get_active(widget));
+}
+
+void on_switch_icon_active_notify(GtkSwitch *widget,
+				  gpointer data)
+{
+  g_settings_set_boolean(settings, "dark-icon", 
+                         gtk_switch_get_active(widget));
+  update_tray();
+}
+
+void on_switch_startup_active_notify(GtkSwitch *widget,
+				     gpointer data)
+{
+  gchar *startup_dir, *desktop_dir;
+  GFile *startup_file, *desktop_file;
+  
+  startup_dir = g_build_filename(g_get_home_dir(), ".config",
+                                 "autostart", "acal.desktop", NULL);
+  desktop_dir = g_build_filename(DATADIR, "applications", "acal.desktop", NULL);
+  
+  startup_file = g_file_new_for_path(startup_dir);
+  desktop_file = g_file_new_for_path(desktop_dir);
+  
+  /* copy acal.desktop to autostart dir on activate autostart */
+  if(gtk_switch_get_active(widget))
+  {
+    g_file_copy(desktop_file, startup_file, G_FILE_COPY_NONE,
+		NULL, NULL, NULL, NULL);
+  }
+  else
+  {
+    g_file_delete(startup_file, NULL, NULL);
+  }
+}
+
+void on_about_click(GtkButton *button,
+                    gpointer data)
+{
+  GtkWidget *dialog;
+  
+  dialog = GTK_WIDGET(gtk_builder_get_object(builder, "about_dialog"));
+  
+  /* run about dialog */
+  gtk_dialog_run(GTK_DIALOG(dialog));
+  gtk_widget_hide(dialog);
+}
+
+void on_pref_click(GtkButton *button,
+		   gpointer data)
+{
+  GtkWidget *dialog, *switch_lang, *switch_icon, *switch_startup;
+  gchar *startup_dir;
+  
+  dialog = GTK_WIDGET(gtk_builder_get_object(builder, "pref_dialog"));
+  switch_lang = GTK_WIDGET(gtk_builder_get_object(builder, "switch_language"));
+  switch_icon = GTK_WIDGET(gtk_builder_get_object(builder, "switch_icon"));
+  switch_startup = GTK_WIDGET(gtk_builder_get_object(builder, 
+                              "switch_startup"));
+  startup_dir = g_build_filename(g_get_home_dir(), ".config",
+                                 "autostart", "acal.desktop", NULL);
+  
+  /* run preferences dialog with user settings */
+  gtk_switch_set_active(GTK_SWITCH(switch_lang), 
+                        g_settings_get_boolean(settings, "persian-lang"));
+  gtk_switch_set_active(GTK_SWITCH(switch_icon), 
+                        g_settings_get_boolean(settings, "dark-icon"));
+  gtk_switch_set_active(GTK_SWITCH(switch_startup), 
+                        g_file_test(startup_dir, G_FILE_TEST_EXISTS));
+  gtk_dialog_run(GTK_DIALOG(dialog));
+  gtk_widget_hide(dialog);
+}
+
+void on_today_click(GtkButton *button,
+                    gpointer data)
+{
+  /* set our time to today */
+  mytime.tm_mday = today.tm_mday;
+  mytime.tm_mon = today.tm_mon;
+  mytime.tm_year = today.tm_year;
+  
+  cal_gen();
+}
+
 void on_next_month_click(GtkWidget *widget,
                          GdkEvent  *event,
-                         gpointer *data)
+                         gpointer data)
 {
   /* increase month if it's not last month */
   if (mytime.tm_mon != 11)
@@ -215,7 +347,7 @@ void on_next_month_click(GtkWidget *widget,
 
 void on_pre_month_click(GtkWidget *widget,
                         GdkEvent  *event,
-                        gpointer *data)
+                        gpointer data)
 {
   /* decrease month if it's not first month */
   if(mytime.tm_mon != 0)
@@ -232,7 +364,7 @@ void on_pre_month_click(GtkWidget *widget,
 
 gboolean on_eventbox_button_press_event(GtkWidget *eventbox, 
                                         GdkEventButton *event, 
-                                        gpointer *data)
+                                        gpointer data)
 {
   /* get day status from eventbox */
   gchar *day = g_object_get_data(G_OBJECT(eventbox), "day");
@@ -267,49 +399,6 @@ void on_menu_cal_click(GtkMenuItem *item,
   gtk_clipboard_set_text(clipboard, today_text, -1);
 }
 
-void time_gen(void)
-{
-  time_t now;
-  
-  /* generate time */
-  now = time(NULL);
-  jlocaltime_r(&now, &today);
-}
-
-void update_tray(AppIndicator *indicator)
-{
-  GtkMenuItem *menu_cal;
-  gchar *icon_name, *today_text;
-  
-  menu_cal = GTK_MENU_ITEM(gtk_builder_get_object(builder, "menu_cal"));
-  
-  /* set tray icon */
-  icon_name = g_strdup_printf("persian-calendar-%d", today.tm_mday);
-  app_indicator_set_icon_full(indicator, icon_name, icon_name);
-  g_free(icon_name);
-  
-  /* set menu_cal text */
-  today_text = g_strdup_printf("%s %s %s %s", gettext(day[today.tm_wday]),
-                               persian_digit(today.tm_mday),
-                               gettext(mon[today.tm_mon]),
-                               persian_digit(today.tm_year));
-  gtk_menu_item_set_label(menu_cal, today_text);
-  g_free(today_text);
-}
-
-gboolean check_update_tray(gpointer indicator)
-{
-  /* save previous time values & generate new time */
-  gint day = today.tm_mday, mon = today.tm_mon, year = today.tm_year;
-  time_gen();
-  
-  /* update tray if day changes */
-  if(today.tm_mday != day || today.tm_mon != mon || today.tm_year != year)
-    update_tray(APP_INDICATOR(indicator));
-
-  return G_SOURCE_CONTINUE;
-}
-
 void activate(GApplication *app,
               gpointer user_data)
 {
@@ -330,7 +419,6 @@ void activate(GApplication *app,
 void startup(GApplication *app,
              gpointer user_data)
 {
-  AppIndicator *indicator;
   GtkMenu *tray_menu;
   GtkWindow *window;
   gchar *theme_path;
@@ -351,17 +439,15 @@ void startup(GApplication *app,
   mytime = today;
   
   /* prepare appindicator */
-  theme_path = g_build_filename(DATADIR, "icons", "ubuntu-mono-dark",
-                                "acal", NULL);
+  theme_path = g_build_filename(DATADIR, "icons", "hicolor", "256x256", NULL);
   indicator = app_indicator_new_with_path("Acal", "persian-calendar-1",
                                 APP_INDICATOR_CATEGORY_APPLICATION_STATUS,
-                                theme_path);
-  g_free(theme_path);
+				theme_path);
   app_indicator_set_status(indicator, APP_INDICATOR_STATUS_ACTIVE);
   app_indicator_set_menu(indicator, tray_menu);
   
   /* show initial tray & prepare cal */
-  update_tray(indicator);
+  update_tray();
   cal_gen();
   
   /* add timer to update tray */
@@ -374,9 +460,15 @@ gint main(gint argc,
   GtkApplication *app;
   gint status;
   
+  /* initialize app settings */
+  settings = g_settings_new("ir.ubuntu.acal");
+  
   /* set up i18n */
-  g_setenv("LANG", "fa_IR.UTF-8", TRUE);
-  g_setenv("LANGUAGE", "fa.UTF-8", TRUE);
+  if(g_settings_get_boolean(settings, "persian-lang"))
+  {
+    g_setenv("LANG", "fa_IR.UTF-8", TRUE);
+    g_setenv("LANGUAGE", "fa.UTF-8", TRUE);
+  }
   bindtextdomain(PACKAGE, LOCALEDIR);
   bind_textdomain_codeset(PACKAGE, "UTF-8");
   textdomain(PACKAGE);

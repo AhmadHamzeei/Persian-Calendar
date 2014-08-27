@@ -7,17 +7,18 @@ msgid ""
 msgstr ""
 "Project-Id-Version: acal 0.1\n"
 "Report-Msgid-Bugs-To: ahmadhamzeei@gmail.com\n"
-"POT-Creation-Date: 2014-08-04 20:58+0430\n"
-"PO-Revision-Date: 2014-08-04 20:59+0330\n"
+"POT-Creation-Date: 2014-08-27 12:43+0430\n"
+"PO-Revision-Date: 2014-08-26 23:06+0330\n"
 "Last-Translator: Ahmad Hamzeei <ahmadhamzeei@gmail.com>\n"
 "Language-Team: Persian <translation-team-fa@lists.sourceforge.net>\n"
 "Language: fa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
 
 #. create a notify with today_text when app activates
-#: ../data/acal.desktop.in.h:1 ../src/acal.c:319
+#: ../data/acal.desktop.in.h:1 ../src/acal.c:413
 #: ../src/resources/calendar.glade.h:1
 msgid "Acal"
 msgstr "تقویم"
@@ -30,124 +31,124 @@ msgstr "تقویم"
 msgid "Acal Calendar"
 msgstr "تقویم Acal"
 
-#: ../data/acal.desktop.in.h:4
+#: ../data/acal.desktop.in.h:4 ../src/resources/calendar.glade.h:15
 msgid "Simple persian calendar"
 msgstr "تقویم فارسی ساده"
 
 #. day & month names
-#: ../src/acal.c:38
+#: ../src/acal.c:40
 msgid "Shanbeh"
 msgstr "شنبه"
 
-#: ../src/acal.c:38
+#: ../src/acal.c:40
 msgid "Yek-Shanbeh"
 msgstr "یک‌شنبه"
 
-#: ../src/acal.c:38
+#: ../src/acal.c:40
 msgid "Do-Shanbeh"
 msgstr "دوشنبه"
 
-#: ../src/acal.c:39
+#: ../src/acal.c:41
 msgid "Seh-Shanbeh"
 msgstr "سه‌شنبه"
 
-#: ../src/acal.c:39
+#: ../src/acal.c:41
 msgid "Chahaar-Shanbeh"
 msgstr "چهارشنبه"
 
-#: ../src/acal.c:40
+#: ../src/acal.c:42
 msgid "Panj-Shanbeh"
 msgstr "پنج‌شنبه"
 
-#: ../src/acal.c:40
+#: ../src/acal.c:42
 msgid "Jomeh"
 msgstr "جمعه"
 
-#: ../src/acal.c:41
+#: ../src/acal.c:43
 msgid "Farvardin"
 msgstr "فروردین"
 
-#: ../src/acal.c:41
+#: ../src/acal.c:43
 msgid "Ordibehesht"
 msgstr "اردیبهشت"
 
-#: ../src/acal.c:41
+#: ../src/acal.c:43
 msgid "Khordaad"
 msgstr "خرداد"
 
-#: ../src/acal.c:41
+#: ../src/acal.c:43
 msgid "Tir"
 msgstr "تیر"
 
-#: ../src/acal.c:42
+#: ../src/acal.c:44
 msgid "Mordaad"
 msgstr "مرداد"
 
-#: ../src/acal.c:42
+#: ../src/acal.c:44
 msgid "Shahrivar"
 msgstr "شهریور"
 
-#: ../src/acal.c:42
+#: ../src/acal.c:44
 msgid "Mehr"
 msgstr "مهر"
 
-#: ../src/acal.c:42
+#: ../src/acal.c:44
 msgid "Aabaan"
 msgstr "آبان"
 
-#: ../src/acal.c:43
+#: ../src/acal.c:45
 msgid "Aazar"
 msgstr "آذر"
 
-#: ../src/acal.c:43
+#: ../src/acal.c:45
 msgid "Dey"
 msgstr "دی"
 
-#: ../src/acal.c:43
+#: ../src/acal.c:45
 msgid "Bahman"
 msgstr "بهمن"
 
-#: ../src/acal.c:43
+#: ../src/acal.c:45
 msgid "Esfand"
 msgstr "اسفند"
 
-#: ../src/acal.c:117
+#: ../src/acal.c:120
 msgid "0"
 msgstr "۰"
 
-#: ../src/acal.c:117
+#: ../src/acal.c:120
 msgid "1"
 msgstr "۱"
 
-#: ../src/acal.c:117
+#: ../src/acal.c:120
 msgid "2"
 msgstr "۲"
 
-#: ../src/acal.c:117
+#: ../src/acal.c:120
 msgid "3"
 msgstr "۳"
 
-#: ../src/acal.c:117
+#: ../src/acal.c:120
 msgid "4"
 msgstr "۴"
 
-#: ../src/acal.c:117
+#: ../src/acal.c:120
 msgid "5"
 msgstr "۵"
 
-#: ../src/acal.c:118
+#: ../src/acal.c:121
 msgid "6"
 msgstr "۶"
 
-#: ../src/acal.c:118
+#: ../src/acal.c:121
 msgid "7"
 msgstr "۷"
 
-#: ../src/acal.c:118
+#: ../src/acal.c:121
 msgid "8"
 msgstr "۸"
 
-#: ../src/acal.c:118
+#: ../src/acal.c:121
 msgid "9"
 msgstr "۹"
 
@@ -156,37 +157,77 @@ msgid "Quit"
 msgstr "خروج"
 
 #: ../src/resources/calendar.glade.h:3
-msgid "Previous month"
-msgstr "ماه قبل"
+msgid "Today"
+msgstr "امروز"
 
 #: ../src/resources/calendar.glade.h:4
+msgid "Preferences"
+msgstr "ترجیحات"
+
+#: ../src/resources/calendar.glade.h:5
+msgid "About Acal"
+msgstr "دربارهٔ Acal"
+
+#: ../src/resources/calendar.glade.h:6
 msgid "Next month"
 msgstr "ماه بعد"
 
-#: ../src/resources/calendar.glade.h:5
+#: ../src/resources/calendar.glade.h:7
+msgid "Previous month"
+msgstr "ماه قبل"
+
+#: ../src/resources/calendar.glade.h:8
 msgid "Sh"
 msgstr "شنبه"
 
-#: ../src/resources/calendar.glade.h:6
+#: ../src/resources/calendar.glade.h:9
 msgid "Ye"
 msgstr "یک‌شنبه"
 
-#: ../src/resources/calendar.glade.h:7
+#: ../src/resources/calendar.glade.h:10
 msgid "Do"
 msgstr "دوشنبه"
 
-#: ../src/resources/calendar.glade.h:8
+#: ../src/resources/calendar.glade.h:11
 msgid "Se"
 msgstr "سه‌شنبه"
 
-#: ../src/resources/calendar.glade.h:9
+#: ../src/resources/calendar.glade.h:12
 msgid "Ch"
 msgstr "چهارشنبه"
 
-#: ../src/resources/calendar.glade.h:10
+#: ../src/resources/calendar.glade.h:13
 msgid "Pa"
 msgstr "پنج‌شنبه"
 
-#: ../src/resources/calendar.glade.h:11
+#: ../src/resources/calendar.glade.h:14
 msgid "Jo"
 msgstr "جمعه"
+
+#: ../src/resources/calendar.glade.h:16
+msgid "Acal Preferences"
+msgstr "ترجیحات"
+
+#: ../src/resources/calendar.glade.h:17
+msgid "Close"
+msgstr "بستن"
+
+#: ../src/resources/calendar.glade.h:18
+msgid "General"
+msgstr "عمومی"
+
+#: ../src/resources/calendar.glade.h:19
+msgid "Persian language"
+msgstr "زبان فارسی"
+
+#: ../src/resources/calendar.glade.h:20
+msgid "Run at startup"
+msgstr "اجرا در نشست"
+
+#: ../src/resources/calendar.glade.h:21
+msgid "Appearance"
+msgstr "ظاهر"
+
+#: ../src/resources/calendar.glade.h:22
+msgid "Dark icon"
+msgstr "نقشک تیره"
