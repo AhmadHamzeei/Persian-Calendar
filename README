@@ -1,16 +1,15 @@
-Acal
-====
+#Acal
 Simple persian calendar written in c.
 
-Download
-========
-Please see the releases section.
+#Download
+https://github.com/AhmadHamzeei/Persian-Calendar/releases
 
-Install
-=======
-sudo apt-get install build-essential libgtk-3-dev libjalali-dev libappindicator3-dev gsettings-desktop-schemas-dev
-tar zxf acal-0.2.tar.gz
-cd acal-0.2
-./configure
-make
-sudo make install
+#Install
+## Debian, Ubuntu
+``` bash
+$ sudo apt-get install build-essential libgtk-3-dev libjalali-dev libappindicator3-dev gsettings-desktop-schemas-dev
+$ tar zxf acal-0.2.tar.gz
+$ cd acal-0.2
+$ ./configure
+$ make
+$ sudo make install```
